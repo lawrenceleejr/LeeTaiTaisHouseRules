@@ -34,4 +34,46 @@
       }
     });
   }
+
+  // Scroll outro: publish 0 → 1 progress as --p while the giant tile is on screen.
+  // The CSS does the rest; reduced motion opts out and keeps the finished state.
+  var reveal = document.getElementById('tile-reveal');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reveal && !still.matches) {
+    var track = reveal.querySelector('.tile-reveal-track');
+    var ticking = false;
+    var live = false;
+
+    var paint = function () {
+      ticking = false;
+      // travel = how far the sticky stage scrolls before it unsticks
+      var travel = track.offsetHeight - window.innerHeight;
+      if (travel <= 0) return;
+      var p = (window.scrollY - reveal.offsetTop) / travel;
+      reveal.style.setProperty('--p', Math.min(1, Math.max(0, p)).toFixed(4));
+    };
+
+    var onScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(paint);
+    };
+
+    // only listen while the section is actually in view
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting === live) return;
+        live = entry.isIntersecting;
+        if (live) {
+          window.addEventListener('scroll', onScroll, { passive: true });
+          paint();
+        } else {
+          window.removeEventListener('scroll', onScroll);
+        }
+      });
+    }).observe(reveal);
+
+    window.addEventListener('resize', onScroll, { passive: true });
+    paint();
+  }
 })();

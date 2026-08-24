@@ -16,12 +16,8 @@
         <a class="btn btn-ghost" href="{{ (site.GetPage "/learn/house-rules").RelPermalink }}">I know mahjong — show me the house rules</a>
       </div>
     </div>
-    <div class="hero-tiles" aria-hidden="true">
-      {{ partial "tile.html" (dict "code" "we" "size" "xl" "class" "fan fan-1") }}
-      {{ partial "tile.html" (dict "code" "d1" "size" "xl" "class" "fan fan-2") }}
-      {{ partial "tile.html" (dict "code" "dr" "size" "xl" "class" "fan fan-3") }}
-      {{ partial "tile.html" (dict "code" "b1" "size" "xl" "class" "fan fan-4") }}
-      {{ partial "tile.html" (dict "code" "c9" "size" "xl" "class" "fan fan-5") }}
+    <div class="hero-tiles">
+      {{ partial "logo-animation.html" . }}
     </div>
   </div>
 </section>
