@@ -1,12 +1,12 @@
 ---
 title: "Scoring, a.k.a. The Money Math"
-description: "Points, the doubling ladder, who pays what (and when they pay double), and the hands worth bragging about. Straight from the official family rule card."
+description: "Points, the doubling ladder, who pays what and when they pay double, and the hands worth bragging about."
 weight: 6
 ---
 
 Deep breath. Mahjong scoring looks like folklore because it *is* folklore —
-every family seasons it differently. Ours is written down (laminated, even),
-and this chapter is a faithful transcription with commentary. The skeleton:
+every family seasons it differently. Ours is written down, and this chapter
+is a faithful transcription with commentary. The skeleton:
 
 1. Count the winning hand's **points** ({{< zh "番" "faan" "doubles" >}} if
    you're feeling ancestral) — earned for how fancy the hand is.
@@ -79,12 +79,14 @@ agree on it before the first deal, not after your cousin wins with garbage.
 
 ## The payout math
 
-Pick a base stake. The rule card calls this unit **"the chicken"** — the
-value of a 0-point hand. Dimes, chips, dumplings of enforceable value.
+Pick a base stake — this unit is called **"the chicken,"** the value of a
+0-point hand. Default is **a penny.** The table can agree on more before the
+first deal — dimes, chips, dumplings of enforceable value — but until
+someone speaks up, a penny it is.
 
 > **Payout per person = chicken × 2^(points)**
 
-Then the multipliers, straight from the card:
+Then the multipliers:
 
 - **Everyone pays the winner.** All three of you. Every win.
 - **The discarder pays double** — the one who
@@ -106,12 +108,12 @@ Uncle Ming pays 16 chickens, the other two pay 8 each, you collect 32 and
 say something gracious like "the tiles chose me." Had you drawn it yourself:
 Zi-Mo doubles everyone to 16 × 3 = 48, plus the Zi-Mo point itself bumped
 you to 4 points first, so it's actually 32 × 3 = 96. Yes, the Zi-Mo point
-*and* the Zi-Mo double stack. The card giveth generously.
+*and* the Zi-Mo double stack. Scoring gives generously.
 
 ## The "9-cards" rule
 
-The card's signature clause. When a player's exposed melds show **nine tiles
-of a single suit**, anyone at the table may (read: will, gleefully) call
+The signature clause. When a player's exposed melds show **nine tiles of a
+single suit**, anyone at the table may — read: will, gleefully — call
 **"9-cards!"** From that moment, the threat of a full flush is officially on
 record — and if you *still* discard the tile that completes it, you don't
 just pay double: **the discarder pays all debts.** All three shares. Alone.
@@ -147,5 +149,5 @@ are actually boring. Also, bankers are never asked to refill the snacks.
 Everything I do has two reasons.
 {{< /taitai >}}
 
-One chapter left: the constitution itself — the full rule card, plus the
+One chapter left: the constitution itself — the full house rules, plus the
 table law that isn't about tiles at all.

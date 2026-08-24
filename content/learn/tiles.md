@@ -90,17 +90,16 @@ tell this story about you.
 Flowers don't go in your hand. When you draw one, you set it aside face-up,
 draw a replacement tile from the back of the wall, and collect bonus points
 at the end if you win: one for each flower whose number matches your seat,
-one for holding **all four of a set** (all seasons, or all plants — on our
+one for holding **all four of a set** — all seasons, or all plants; on our
 tiles you can tell the sets apart by the color of the little corner
-numbers), and one for having no flowers at all, because the card has a sense
-of humor.
+numbers — and one for having no flowers at all, because these rules have a
+sense of humor.
 
 {{< houserule >}}
-Some families play "no flowers" for a leaner game. The Lee table plays
-**with** flowers — and with the lottery clause: collect **all eight
-flowers** and the hand ends on the spot. Automatic win, maximum points, no
-legs, no eyes, no notes. We did not come here to live a life without small
-unearned windfalls.
+We play **with** flowers, and with the lottery clause attached: collect
+**all eight flowers** and the hand ends on the spot. Automatic win, maximum
+points, no legs, no eyes, no notes. We did not come here to live a life
+without small unearned windfalls.
 {{< /houserule >}}
 
 ## The tile-count cheat table

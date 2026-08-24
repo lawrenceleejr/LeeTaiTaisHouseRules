@@ -529,13 +529,34 @@ h4 {
 }
 
 .marquee-item {
-  /* Latin from Inter, hanzi from the brush face */
-  font-family: 'Inter', 'LXGW WenKai TC', sans-serif;
-  font-weight: 650;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
   padding-inline: 1.1rem;
+}
+
+.marquee-han {
+  font-family: var(--font-zh);
+  font-weight: 600;
+  font-size: 1.15em;
+}
+
+.marquee-rom {
+  font-weight: 650;
+  font-style: italic;
+}
+
+.marquee-en {
+  font-weight: 450;
+  opacity: 0.72;
+}
+
+.marquee-en::before {
+  content: '— ';
 }
 
 .marquee-dot {
@@ -638,36 +659,6 @@ h4 {
   grid-template-columns: 1fr;
   max-width: 52rem;
   margin-block: 2.5rem 4rem;
-}
-
-/* ---------- pull quote ---------- */
-.pullquote {
-  background: var(--green-deep);
-  color: #f2edda;
-  padding-block: clamp(3.5rem, 7vw, 5.5rem);
-}
-
-.pullquote blockquote {
-  margin: 0 auto;
-  max-width: 48rem;
-  text-align: center;
-}
-
-.pullquote p {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
-  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
-  line-height: 1.3;
-  margin: 0 0 1rem;
-}
-
-.pullquote cite {
-  font-style: normal;
-  font-size: var(--fs-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gold);
 }
 
 /* ---------- features ---------- */

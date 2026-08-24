@@ -14,9 +14,8 @@ auntie who claims she "never has good tiles" while winning four hands in a row
 
 This site teaches **Hong Kong style** (13-tile) mahjong, because that's what
 the Lee table plays and because it has the best ratio of drama to rules. If
-you learned American mah-jongg with the card from the league — we love that
-for you, but leave it at the door. There are no jokers here. This isn't
-canasta.
+you learned American mah-jongg — we love that for you, but leave it at the
+door. There are no jokers here. This isn't canasta.
 
 ## The whole game in one sentence
 

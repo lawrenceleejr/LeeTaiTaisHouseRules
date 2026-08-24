@@ -29,22 +29,22 @@
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     {{- $phrases := slice
-      "洗牌 — wash the tiles, loudly"
-      "碰 pong!"
-      "上 seung!"
-      "槓 gong!"
-      "食糊 — that’s a win, pay up"
-      "自摸 — self-draw, double smug"
-      "聽牌 — one away, act natural"
-      "太碰 — officially thinking about it"
-      "十三幺 — thirteen orphans, call the group chat"
-      "九張 — you were warned"
-      "辣 — six points, capped, Spicy"
-      "詐糊 — false win, eternal shame"
+      (dict "han" "洗牌" "rom" "sai paai" "en" "wash the tiles, loudly")
+      (dict "han" "碰" "rom" "pong" "en" "that’s mine now")
+      (dict "han" "上" "rom" "seung" "en" "run, from the left")
+      (dict "han" "槓" "rom" "gong" "en" "four of a kind")
+      (dict "han" "食糊" "rom" "sik wu" "en" "that’s a win, pay up")
+      (dict "han" "自摸" "rom" "zi mo" "en" "self-draw, double smug")
+      (dict "han" "聽牌" "rom" "ting paai" "en" "one away, act natural")
+      (dict "han" "太碰" "rom" "tai-pong" "en" "officially thinking about it")
+      (dict "han" "十三幺" "rom" "sap saam jiu" "en" "thirteen orphans, call the group chat")
+      (dict "han" "九張" "rom" "gau zoeng" "en" "you were warned")
+      (dict "han" "辣" "rom" "laat" "en" "six points, capped, Spicy")
+      (dict "han" "詐糊" "rom" "zaa wu" "en" "false win, eternal shame")
     }}
     {{- range seq 2 }}
     <span class="marquee-run">
-      {{- range $phrases }}<span class="marquee-item">{{ . }}</span><span class="marquee-dot">✦</span>{{ end -}}
+      {{- range $phrases }}<span class="marquee-item"><span class="marquee-han" lang="zh-Hant">{{ .han }}</span><span class="marquee-rom">{{ .rom }}</span><span class="marquee-en">{{ .en }}</span></span><span class="marquee-dot">✦</span>{{ end -}}
     </span>
     {{- end }}
   </div>
@@ -54,7 +54,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>The curriculum</h2>
-      <p>Seven short chapters. Read them in order, or don’t — TaiTai isn’t your real auntie. (She’s meaner.)</p>
+      <p>Seven short chapters. Read them in order, or don’t — TaiTai probably isn’t your real auntie.</p>
     </div>
     <div class="chapter-grid">
       {{- range (where site.RegularPages "Section" "learn").ByWeight }}
@@ -71,15 +71,6 @@
   </div>
 </section>
 
-<section class="pullquote">
-  <div class="wrap">
-    <blockquote>
-      <p>“If you have time to complain about your tiles, you have time to discard.”</p>
-      <cite>— Lee TaiTai, every single week since 1989</cite>
-    </blockquote>
-  </div>
-</section>
-
 <section class="features">
   <div class="wrap feature-grid">
     <div class="feature">
@@ -89,8 +80,8 @@
     </div>
     <div class="feature">
       <p class="feature-zh" lang="zh-Hant">規</p>
-      <h3>House rules, clearly flagged</h3>
-      <p>Standard Hong Kong rules and Lee-family law are labeled separately, so you know exactly which arguments you can win. (Neither.)</p>
+      <h3>One ruleset, no asterisks</h3>
+      <p>This is exactly how the Lee table plays — the whole game, start to finish, with none of the “well, some families…” hedging.</p>
     </div>
     <div class="feature">
       <p class="feature-zh" lang="zh-Hant">囍</p>
