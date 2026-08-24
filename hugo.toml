@@ -6,7 +6,7 @@ disableKinds = ['taxonomy', 'term']
 
 [params]
   subtitle = 'One game. Two eyes. Three suits. Four legs.'
-  description = "A gloriously opinionated field guide to Hong Kong–style mahjong, as played (and enforced) at the Lee family table since forever."
+  description = "A gloriously opinionated field guide to mahjong, as played and enforced at the Lee family table since forever."
   tagline = "Learn mahjong the way you were supposed to: loudly, at a folding table, with snacks."
 
 [menus]

@@ -1,0 +1,51 @@
+{{- /*
+  Hero logo animation — the five-scene loop from the Claude Design handoff,
+  rebuilt as pure CSS so it loops natively with no JS and no timing drift.
+
+    Shuffle 1.9s → Stack 0.8s → Reveal 2.1s → Hold 4s → Scatter 1.1s  (9.9s total)
+
+  Face-down tiles churn on the felt, get swept aside as three gather into a row,
+  flip over one by one to read 李太太, the wordmark rises, the lockup breathes,
+  then the whole thing is swept off and a fresh wash flies back in.
+  Every tile's 0% pose equals its 100% pose, which is what closes the loop.
+*/ -}}
+
+{{- $churn := slice
+  (dict "ax" "-172%" "ay"  "-64%" "ar" "-17deg" "bx" "-128%" "by"  "-92%" "br"  "13deg" "cx" "-186%" "cy"  "-38%" "cr" "-28deg" "ox" "-280%" "oy" "-150%" "or" "-62deg")
+  (dict "ax"  "-88%" "ay"   "58%" "ar"  "22deg" "bx" "-142%" "by"   "30%" "br"  "-9deg" "cx"  "-74%" "cy"   "78%" "cr"  "34deg" "ox" "-250%" "oy"  "180%" "or"  "48deg")
+  (dict "ax"   "26%" "ay" "-102%" "ar" "-31deg" "bx"   "62%" "by"  "-68%" "br"  "11deg" "cx"    "8%" "cy" "-118%" "cr" "-14deg" "ox"   "40%" "oy" "-230%" "or" "-70deg")
+  (dict "ax"  "148%" "ay"  "-42%" "ar"  "15deg" "bx"  "104%" "by"  "-76%" "br" "-21deg" "cx"  "166%" "cy"  "-16%" "cr"  "27deg" "ox"  "268%" "oy" "-140%" "or"  "58deg")
+  (dict "ax"  "112%" "ay"   "66%" "ar" "-24deg" "bx"  "158%" "by"   "38%" "br"   "8deg" "cx"   "96%" "cy"   "88%" "cr" "-36deg" "ox"  "262%" "oy"  "168%" "or" "-52deg")
+  (dict "ax"  "-18%" "ay"  "104%" "ar"  "29deg" "bx"   "22%" "by"   "74%" "br" "-16deg" "cx"  "-34%" "cy"  "116%" "cr"  "18deg" "ox"  "-30%" "oy"  "240%" "or"  "66deg")
+  (dict "ax" "-142%" "ay"   "-6%" "ar"   "9deg" "bx"  "-96%" "by"  "-34%" "br"  "26deg" "cx" "-158%" "cy"   "18%" "cr"  "-6deg" "ox" "-266%" "oy"   "30%" "or"  "38deg")
+  (dict "ax"   "78%" "ay"  "-96%" "ar" "-12deg" "bx"   "34%" "by" "-124%" "br"  "18deg" "cx"   "92%" "cy"  "-74%" "cr" "-30deg" "ox"  "184%" "oy" "-236%" "or" "-44deg")
+-}}
+
+{{- $trio := slice
+  (dict "zh" "李" "row" "-118%" "fx" "-160%" "fr" "-34deg" "sx" "-210%" "sr" "-58deg" "delay" "0s")
+  (dict "zh" "太" "row"    "0%" "fx"   "10%" "fr"  "26deg" "sx"   "20%" "sr"  "42deg" "delay" "0.5s")
+  (dict "zh" "太" "row"  "118%" "fx"  "168%" "fr" "-18deg" "sx"  "224%" "sr"  "64deg" "delay" "1s")
+-}}
+
+<div class="logo-anim" role="img"
+     aria-label="Mahjong tiles shuffle on the felt, gather into a row, and flip over to reveal 李太太 — Lee TaiTai — above the words House Rules.">
+  <div class="logo-anim-stage">
+    {{- range $churn }}
+    <span class="la-churn" style="--ax:{{ .ax }};--ay:{{ .ay }};--ar:{{ .ar }};--bx:{{ .bx }};--by:{{ .by }};--br:{{ .br }};--cx:{{ .cx }};--cy:{{ .cy }};--cr:{{ .cr }};--ox:{{ .ox }};--oy:{{ .oy }};--or:{{ .or }}"></span>
+    {{- end }}
+
+    <div class="la-lockup">
+      <div class="la-row">
+        {{- range $trio }}
+        <div class="la-tile" style="--row:{{ .row }};--fx:{{ .fx }};--fr:{{ .fr }};--sx:{{ .sx }};--sr:{{ .sr }};--d:{{ .delay }}">
+          <div class="la-flip">
+            <span class="la-face la-back"></span>
+            <span class="la-face la-front" lang="zh-Hant">{{ .zh }}</span>
+          </div>
+        </div>
+        {{- end }}
+      </div>
+      <p class="la-wordmark"><span>House</span> <span>Rules</span></p>
+    </div>
+  </div>
+</div>

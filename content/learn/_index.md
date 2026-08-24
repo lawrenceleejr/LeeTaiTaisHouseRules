@@ -10,6 +10,6 @@ it *feel* hard is that most of us learned it by being yelled at across a
 folding table, three rules at a time, while someone's popo took our allowance.
 
 This curriculum fixes that. Read the chapters in order and you'll know the
-tiles, the flow, the calls, the wins, and the money math — plus every
-Lee-family amendment, clearly flagged, so when someone says *"that's not how we
-play,"* you can say *"I know. It's how **we** play."*
+tiles, the flow, the calls, the wins, and the money math — the whole game
+exactly as it's played at the Lee table. So when someone says *"that's not
+how we play,"* you can say *"I know. It's how **we** play."*

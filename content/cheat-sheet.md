@@ -14,20 +14,38 @@ triplets/kongs. Eyes are one pair. You hold 13; the 14th wins it.
 
 ## Your turn, every turn
 
-1. **Draw** from the wall (flower? set aside, redraw from the tail).
+1. **Draw** from the wall. Flower? Set it aside, redraw from the tail.
 2. Optional: declare kong / win.
-3. **Discard** face-up and **say its name**.
+3. **Discard** face-up. No announcement needed.
 
 ## The calls
 
-| Call | Say it | Claims | From | Beats |
+Only two calls need a word out loud — pong and a win. Seung and gong you
+just take.
+
+| Call | Say it? | Claims | From | Beats |
 |---|---|---|---|---|
-| Run | **seung** 上 | discard completing a run | left neighbor only | — |
-| Triplet | **pong** 碰 | discard completing a triplet | anyone | seung |
-| Kong | **gong** 槓 | 4th copy of your triplet | anyone (or self-drawn) | seung |
-| Win | **sik wu** 食糊 | your winning tile | anyone | everything |
+| Run — seung 上 | No, just take it | discard completing a run | left neighbor only | — |
+| Triplet — pong 碰 | **"pong"** | discard completing a triplet | anyone | seung |
+| Kong — gong 槓 | No, just take it | 4th copy of your triplet | anyone, or self-drawn | seung |
+| Win — sik wu 食糊 | **"sik wu"** | your winning tile | anyone | everything |
 
 Claim window closes when the next discard lands. No appeals.
+
+## Read the tiles
+
+Three suits, 1–9 each, four copies of every tile. Dots and bamboo you can
+just count. Characters are numbers written in Chinese — here's the decoder:
+
+{{< hand tiles="c1 c2 c3 c4 c5 c6 c7 c8 c9" size="sm" caption="一 1 · 二 2 · 三 3 · 四 4 · 五 5 · 六 6 · 七 7 · 八 8 · 九 9 — sitting over 萬, ten-thousand." >}}
+
+{{< hand tiles="d1 d2 d3 d4 d5 d6 d7 d8 d9" size="sm" caption="Dots, 1–9. Count the circles." >}}
+
+{{< hand tiles="b1 b2 b3 b4 b5 b6 b7 b8 b9" size="sm" caption="Bamboo, 1–9. Count the sticks. The 1 is a bird." >}}
+
+{{< hand tiles="we ws ww wn dr dg dw" caption="Winds — East 東, South 南, West 西, North 北 — then the dragons: red 中, green 發, and the blank white dragon." >}}
+
+{{< hand tiles="f1 f2 f3 f4 p1 p2 p3 p4" size="sm" caption="Flowers: four seasons, four plants. Bonus points, no legs required." >}}
 
 ## Point quick menu
 
@@ -43,24 +61,24 @@ Claim window closes when the next discard lands. No appeals.
 | Robbed Pong/Gong win | 1 | | | 4 Gongs | 6 |
 | Gong-replacement win | 1 | | | **All 8 flowers = auto-win** | 6 |
 
-## The money (from the card)
+## The money
 
-- **Payout per person: chicken × 2^(points).** The chicken = base stake.
+- **Payout per person: chicken × 2^(points).** The chicken = base stake,
+  default a penny; table can agree on more before the first deal.
 - Ladder per person: **0=1 · 1=2 · 2=4 · 3=8 · 4=16 · 5=32 · 6=64**.
 - **Discarder pays double.** **Zi-Mo: everyone pays double.**
 - **Capped at 6 points — "Spicy" 辣.**
 - **"9-cards" called + full flush wins off you → discarder pays all debts.**
-- Chicken hands legal; a **point minimum may be applied** (declare pre-deal).
-- **Dealer** keeps the deal by winning (連莊).
+- Chicken hands are legal by default; a **point minimum** may be applied if
+  agreed before the first deal.
+- **Dealer** keeps the deal by winning — 連莊.
 - Last **14 tiles of the wall are dead** — no winner by then = wash, re-deal.
 
 ## Emergency etiquette
 
 - Seating: Chinese people get seat priority; couples sit **across**, not adjacent.
-- Discards: out loud. Phones: face-down. Shrimp chips: wash your hands.
-- Don't touch the wall out of turn. Don't coach. Don't slow-roll a win.
 - "Tai-Pong" (太碰) = "I'm thinking about ponging." Binding on no one, feared by all.
-- False win (詐糊): pay everyone the max, answer to "Professor."
+- False win (詐糊): pay everyone the max.
 
 ---
 

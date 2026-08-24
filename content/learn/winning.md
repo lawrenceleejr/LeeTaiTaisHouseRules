@@ -1,5 +1,5 @@
 ---
-title: "Winning (and Declaring It)"
+title: "Winning, and Declaring It"
 description: "Ting, sik wu, Zi-Mo: the states of grace. Plus the waits you'll live in, the false win that lives in infamy, and the famous hands that break the rules."
 weight: 5
 ---
@@ -14,9 +14,9 @@ When your hand is one tile away from complete, you are **ting**
 one hole in the picture, every draw and every discard at the table suddenly
 personal.
 
-Etiquette note: you don't announce ting in Hong Kong style. You just… get
-quiet. Suspiciously quiet. Everyone notices. Nobody says anything. The
-tension is the entertainment.
+Etiquette note: you don't announce ting here. You just… get quiet.
+Suspiciously quiet. Everyone notices. Nobody says anything. The tension is
+the entertainment.
 
 ## Know your waits
 
@@ -39,11 +39,11 @@ three are face-up on the table, your gorgeous wait is a museum exhibit.
 
 ### Off a discard
 
-Someone throws your tile; you say {{< zh "食糊" "sik wu" >}} (or just "sik!"
-in the heat of it), lay your hand face-up, and the table audits it. The
-thrower is the **discarder** ({{< zh "出銃" "ceot cung" "firing the cannon" >}})
-and pays a premium for their crime (Chapter 6). It's nothing personal. It's
-completely personal.
+Someone throws your tile; you say {{< zh "食糊" "sik wu" >}} — or just "sik!"
+in the heat of it — lay your hand face-up, and the table audits it. The
+thrower is the **discarder** ({{< zh "出銃" "ceot cung" "firing the cannon" >}}),
+and pays a premium for their crime. Details in Chapter 6. It's nothing
+personal. It's completely personal.
 
 ### Self-draw
 
@@ -60,46 +60,45 @@ appropriately:
 
 - **Robbing the Pong/Gong** ({{< zh "搶槓" "coeng gong" >}}): someone claims
   or extends a set with the exact tile that completes your hand — you snatch
-  it and win with it, plus a point on the card. Legal. Devastating.
-  Discussed for years.
+  it and win with it, plus an extra point. Legal. Devastating. Discussed for
+  years.
 - **Winning on a Gong replacement:** you declare a kong, draw the
   replacement from the tail, and *the replacement wins the hand*. Also worth
   a point — the kong that paid out twice.
 - **Last-tile heroics** ({{< zh "海底撈月" "hoi dai laau jyut" "scooping the moon from the sea" >}}):
-  winning on the final live tile before the dead wall. The family card
-  grants it no extra points; the group chat grants it immortality.
+  winning on the final live tile before the dead wall. No extra points; the
+  group chat grants it immortality instead.
 
 ## The audit
 
 When you declare, your hand goes face-up and the table checks it: four legs,
-two eyes, and — if the table declared a **point minimum** before dealing
-(see [Chapter 6]({{< relref "scoring" >}})) — enough points to clear it.
-Only then does money move.
+two eyes, and — if the table declared a **point minimum** before dealing —
+enough points to clear it. [Chapter 6]({{< relref "scoring" >}}) has the
+details. Only then does money move.
 
 Declare a win you don't have and you've committed
 {{< zh "詐糊" "zaa wu" "false win" >}} — the deepest shame available at a
-mahjong table. The standard penalty is steep (you pay everyone as if they'd
-won), but the *real* penalty is that it becomes your name. "Remember when
-Kevin zaa wu'd?" Kevin has a PhD now. It has not helped.
+mahjong table. The standard penalty is steep: you pay everyone as if
+they'd won. The *real* penalty is that it becomes your name. "Remember
+when Kevin zaa wu'd?" Kevin has a PhD now. It has not helped.
 
 {{< houserule >}}
-Lee-family zaa wu tariff: you pay all three players the table maximum, and
-you are addressed as "Professor" for the remainder of the evening. We find
-this keeps declarations conservative.
+Lee-family zaa wu tariff: you pay all three players the table maximum. We
+find this keeps declarations conservative.
 {{< /houserule >}}
 
 ## The exceptions that prove the shape
 
 A few celebrity hands ignore the four-legs-two-eyes silhouette — all of them
-on the family card, all of them worth interrupting dinner to describe:
+legal here, all of them worth interrupting dinner to describe:
 
-**Seven pairs** ({{< zh "七對子" "chat deui zi" >}}): exactly what it sounds
+**Seven pairs**, {{< zh "七對子" "chat deui zi" >}}: exactly what it sounds
 like — seven pairs, no legs at all, fully concealed by nature. Worth **4
 points** and a warm feeling of having gamed the system.
 
 {{< hand tiles="d2 d2 b5 b5 b9 b9 c1 c1 we we dg dg dr | dr*" size="sm" caption="Seven pairs, waiting on the second red dragon. Fourteen tiles of pure hoarding behavior, finally rewarded." >}}
 
-**Thirteen orphans** ({{< zh "十三幺" "sap saam jiu" >}}): one of every
+**Thirteen orphans**, {{< zh "十三幺" "sap saam jiu" >}}: one of every
 terminal and honor — 1 and 9 of each suit, all four winds, all three dragons
 — plus a second copy of any one of them. Fourteen loners forming a hand that
 shouldn't work and instead scores the **cap: 6 points, Spicy**. Attempting
@@ -109,7 +108,7 @@ it is irrational. Landing it is immortality.
 
 **All eight flowers**: collect every flower and season and the hand simply
 **ends — automatic win, 6 points**, no legs, no eyes, no shame. The
-scratch-off ticket of mahjong, and yes, it's on the card.
+scratch-off ticket of mahjong, and yes, it's legal here.
 
 {{< taitai >}}
 Chase the limit hands once a year, maximum. The rest of the time, win the

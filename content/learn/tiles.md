@@ -40,12 +40,12 @@ sparrows.
 ### Characters · 萬 maan
 
 The literacy check. Each tile is a number written in Chinese over the
-character {{< zh "萬" "maan" >}} ("ten thousand"), so the 5 of characters is
-literally "50,000." Aspirational.
+character {{< zh "萬" "maan" >}}, meaning ten thousand — so the 5 of
+characters is literally "50,000." Aspirational.
 
 {{< hand tiles="c1 c2 c3 c4 c5 c6 c7 c8 c9" size="sm" caption="Characters, 1–9: 一 二 三 四 五 六 七 八 九. One through three are freebies. Four through nine build character. Pun intended." >}}
 
-If you didn't go to Chinese school (or went and retained only trauma), here's
+If you didn't go to Chinese school, or went and retained only trauma, here's
 your crash course: {{< zh "一" "yat" "1" >}}, {{< zh "二" "yi" "2" >}},
 {{< zh "三" "saam" "3" >}}, {{< zh "四" "sei" "4" >}},
 {{< zh "五" "ng" "5" >}}, {{< zh "六" "luk" "6" >}},
@@ -62,10 +62,10 @@ kongs, or eyes. They are, in every sense, too important to be sequenced.
 
 {{< hand tiles="we ws ww wn" caption="East 東, South 南, West 西, North 北 — four copies each. The little letter in the corner is training wheels; use it proudly." >}}
 
-Winds matter twice: each **seat** has a wind, and each **round** has a wind
-(Chapter 3). A triplet of your own seat's wind or the round's wind scores
-extra. A triplet of a random wind scores nothing and takes up real estate —
-the decorative throw pillow of mahjong hands.
+Winds matter twice: each **seat** has a wind, and each **round** has a wind.
+Chapter 3 covers both. A triplet of your own seat's wind or the round's wind
+scores extra. A triplet of a random wind scores nothing and takes up real
+estate — the decorative throw pillow of mahjong hands.
 
 ### The three dragons
 
@@ -80,27 +80,26 @@ the decorative throw pillow of mahjong hands.
   blank check, or the void. Depends which uncle you ask.
 
 Any triplet of any dragon scores a bonus. Collect all three triplets and
-you've made one of the most feared hands in the game (Chapter 6). People will
-tell this story about you.
+you've made one of the most feared hands in the game. People will tell this
+story about you.
 
 ## The flowers (8 tiles)
 
-{{< hand tiles="f1 f2 f3 f4 p1 p2 p3 p4" size="sm" caption="Four seasons (春夏秋冬) and four plants (梅蘭菊竹), one copy each. Pretty, useless for building, worth bonus points anyway. The influencers of the tile set." >}}
+{{< hand tiles="f1 f2 f3 f4 p1 p2 p3 p4" size="sm" caption="Four seasons 春夏秋冬 and four plants 梅蘭菊竹, one copy each. Pretty, useless for building, worth bonus points anyway. The influencers of the tile set." >}}
 
 Flowers don't go in your hand. When you draw one, you set it aside face-up,
 draw a replacement tile from the back of the wall, and collect bonus points
 at the end if you win: one for each flower whose number matches your seat,
-one for holding **all four of a set** (all seasons, or all plants — on our
+one for holding **all four of a set** — all seasons, or all plants; on our
 tiles you can tell the sets apart by the color of the little corner
-numbers), and one for having no flowers at all, because the card has a sense
-of humor.
+numbers — and one for having no flowers at all, because these rules have a
+sense of humor.
 
 {{< houserule >}}
-Some families play "no flowers" for a leaner game. The Lee table plays
-**with** flowers — and with the lottery clause: collect **all eight
-flowers** and the hand ends on the spot. Automatic win, maximum points, no
-legs, no eyes, no notes. We did not come here to live a life without small
-unearned windfalls.
+We play **with** flowers, and with the lottery clause attached: collect
+**all eight flowers** and the hand ends on the spot. Automatic win, maximum
+points, no legs, no eyes, no notes. We did not come here to live a life
+without small unearned windfalls.
 {{< /houserule >}}
 
 ## The tile-count cheat table
