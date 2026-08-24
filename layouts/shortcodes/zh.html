@@ -1,0 +1,4 @@
+{{- /* {{< zh "食糊" "sik wu" "to win" >}} — hanzi, romanization, optional gloss */ -}}
+{{- $gloss := .Get 2 -}}
+<span class="zh"{{ with $gloss }} title="{{ . }}"{{ end }}><span class="zh-han" lang="zh-Hant">{{ .Get 0 }}</span>{{ with .Get 1 }}<span class="zh-rom">{{ . }}</span>{{ end }}</span>
+{{- /* keep inline */ -}}
