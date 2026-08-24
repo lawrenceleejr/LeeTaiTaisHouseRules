@@ -20,9 +20,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write   # lets configure-pages enable Pages on first run
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,11 +31,13 @@ jobs:
           hugo version
       - uses: actions/configure-pages@v5
         id: pages
-        with:
-          enablement: true
+        # Until Pages is enabled (Settings -> Pages -> Source: GitHub Actions),
+        # this step can't resolve the site URL; don't fail the build over it.
+        continue-on-error: true
       - name: Build
-        # Pages provides the correct base URL (handles project vs user sites).
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        # Pages provides the correct base URL (handles project vs user sites);
+        # fall back to the baseURL in hugo.toml before Pages is first enabled.
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url || 'https://lawrenceleejr.github.io/LeeTaiTaisHouseRules' }}/"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public

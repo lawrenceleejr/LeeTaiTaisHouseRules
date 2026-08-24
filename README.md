@@ -49,6 +49,6 @@ FORCE_HOST=1 ./run.sh build   # on the host if hugo is installed
 ## Deploy
 
 GitHub Actions (`.github/workflows/pages.yml`) builds every push and
-deploys to GitHub Pages from `main`. Repo setting: **Settings → Pages →
-Source: GitHub Actions** (the workflow will attempt to enable this
-automatically on first run).
+deploys to GitHub Pages from `main`. One-time repo setting (a workflow
+token can't do this itself): **Settings → Pages → Source: GitHub Actions**,
+then re-run the latest `pages` workflow on `main`.
