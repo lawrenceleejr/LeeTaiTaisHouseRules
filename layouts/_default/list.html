@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="doc">
+  <header class="doc-hero">
+    <div class="wrap doc-hero-wrap">
+      <p class="doc-kicker">{{ .Params.kicker | default "The curriculum" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{- with .Description }}<p class="doc-lede">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="doc-content prose section-intro">
+      {{ .Content }}
+    </div>
+    <div class="chapter-grid chapter-grid-list">
+      {{- range .Pages.ByWeight }}
+      <a class="chapter-card" href="{{ .RelPermalink }}">
+        <span class="chapter-num">{{ printf "%02d" .Weight }}</span>
+        <span class="chapter-body">
+          <span class="chapter-title">{{ .Title }}</span>
+          <span class="chapter-desc">{{ .Description }}</span>
+        </span>
+        <span class="chapter-arrow" aria-hidden="true">→</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{ end }}

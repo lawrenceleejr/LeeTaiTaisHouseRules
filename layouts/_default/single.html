@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{- $isChapter := eq .Section "learn" }}
+{{- $chapters := (where site.RegularPages "Section" "learn").ByWeight }}
+<article class="doc {{ if $isChapter }}doc-chapter{{ end }}">
+  <header class="doc-hero">
+    <div class="wrap doc-hero-wrap">
+      {{- if $isChapter }}
+      <p class="doc-kicker">Chapter {{ printf "%02d" .Weight }} <span class="doc-kicker-sep">·</span> <a href="{{ .Parent.RelPermalink }}">The curriculum</a></p>
+      {{- else }}
+      <p class="doc-kicker">{{ .Params.kicker | default "Reference" }}</p>
+      {{- end }}
+      <h1>{{ .Title }}</h1>
+      {{- with .Description }}<p class="doc-lede">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="wrap doc-layout">
+    {{- if and (not .Params.hideToc) .TableOfContents (gt (len .TableOfContents) 50) }}
+    <aside class="doc-toc" aria-label="On this page">
+      <p class="toc-head">On this page</p>
+      {{ .TableOfContents }}
+    </aside>
+    {{- end }}
+    <div class="doc-content prose">
+      {{ .Content }}
+
+      {{- if $isChapter }}
+      {{- /* Hugo's Next/Prev point toward the front of the weight-sorted list,
+             so "previous chapter" is NextInSection and vice versa. */}}
+      <nav class="pagenav" aria-label="Chapter navigation">
+        {{- with .NextInSection }}
+        <a class="pagenav-link pagenav-prev" href="{{ .RelPermalink }}">
+          <span class="pagenav-label">← Previous</span>
+          <span class="pagenav-title">{{ .Title }}</span>
+        </a>
+        {{- else }}<span class="pagenav-spacer"></span>{{ end }}
+        {{- with .PrevInSection }}
+        <a class="pagenav-link pagenav-next" href="{{ .RelPermalink }}">
+          <span class="pagenav-label">Next →</span>
+          <span class="pagenav-title">{{ .Title }}</span>
+        </a>
+        {{- else }}
+        <a class="pagenav-link pagenav-next" href="{{ (site.GetPage "/cheat-sheet").RelPermalink }}">
+          <span class="pagenav-label">You made it →</span>
+          <span class="pagenav-title">Grab the cheat sheet</span>
+        </a>
+        {{- end }}
+      </nav>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{ end }}

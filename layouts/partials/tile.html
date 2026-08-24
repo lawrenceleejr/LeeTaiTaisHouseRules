@@ -1,0 +1,131 @@
+{{- /*
+  Renders one mahjong tile as inline SVG.
+  Usage: partial "tile.html" (dict "code" "b3" "size" "md" "class" "tilt-l")
+
+  Codes:
+    d1–d9  dots (筒)        b1–b9  bamboo (條)     c1–c9  characters (萬)
+    we ws ww wn  winds       dr dg dw  dragons      f1–f4 seasons  p1–p4 plants
+    back   face-down tile
+*/ -}}
+{{- $code := lower (.code | default "back") -}}
+{{- $size := .size | default "md" -}}
+{{- $class := .class | default "" -}}
+
+{{- $numNames := dict "1" "one" "2" "two" "3" "three" "4" "four" "5" "five" "6" "six" "7" "seven" "8" "eight" "9" "nine" -}}
+{{- $numerals := dict "1" "一" "2" "二" "3" "三" "4" "四" "5" "五" "6" "六" "7" "七" "8" "八" "9" "九" -}}
+{{- $winds := dict "we" (dict "zh" "東" "en" "east wind" "abbr" "E") "ws" (dict "zh" "南" "en" "south wind" "abbr" "S") "ww" (dict "zh" "西" "en" "west wind" "abbr" "W") "wn" (dict "zh" "北" "en" "north wind" "abbr" "N") -}}
+{{- $flowers := dict
+      "f1" (dict "zh" "春" "en" "spring (season 1)" "n" "1" "tone" "red")
+      "f2" (dict "zh" "夏" "en" "summer (season 2)" "n" "2" "tone" "red")
+      "f3" (dict "zh" "秋" "en" "autumn (season 3)" "n" "3" "tone" "red")
+      "f4" (dict "zh" "冬" "en" "winter (season 4)" "n" "4" "tone" "red")
+      "p1" (dict "zh" "梅" "en" "plum (flower 1)" "n" "1" "tone" "blue")
+      "p2" (dict "zh" "蘭" "en" "orchid (flower 2)" "n" "2" "tone" "blue")
+      "p3" (dict "zh" "菊" "en" "chrysanthemum (flower 3)" "n" "3" "tone" "blue")
+      "p4" (dict "zh" "竹" "en" "bamboo (flower 4)" "n" "4" "tone" "blue") -}}
+
+{{- $suit := substr $code 0 1 -}}
+{{- $rank := substr $code 1 1 -}}
+{{- /* only numeric codes belong to a suit — keeps "dr"/"dg"/"dw" out of the dots branch */ -}}
+{{- if not (isset $numNames $rank) }}{{ $suit = "" }}{{ end -}}
+
+{{- /* accessible name — specific codes first ("dr" would otherwise match suit "d") */ -}}
+{{- $label := "face-down tile" -}}
+{{- if isset $winds $code }}{{ $label = (index $winds $code).en }}
+{{- else if eq $code "dr" }}{{ $label = "red dragon" }}
+{{- else if eq $code "dg" }}{{ $label = "green dragon" }}
+{{- else if eq $code "dw" }}{{ $label = "white dragon" }}
+{{- else if isset $flowers $code }}{{ $label = (index $flowers $code).en }}
+{{- else if eq $suit "d" }}{{ $label = printf "%s of dots" (index $numNames $rank) }}
+{{- else if eq $suit "b" }}{{ $label = printf "%s of bamboo" (index $numNames $rank) }}
+{{- else if eq $suit "c" }}{{ $label = printf "%s of characters" (index $numNames $rank) }}
+{{- end -}}
+
+{{- $dots := dict
+    "2" (slice (slice 32.0 23.0 9.5) (slice 32.0 59.0 9.5))
+    "3" (slice (slice 18.0 21.0 8.0) (slice 32.0 41.0 8.0) (slice 46.0 61.0 8.0))
+    "4" (slice (slice 21.0 24.0 8.0) (slice 43.0 24.0 8.0) (slice 21.0 58.0 8.0) (slice 43.0 58.0 8.0))
+    "5" (slice (slice 19.0 22.0 7.0) (slice 45.0 22.0 7.0) (slice 32.0 41.0 7.0) (slice 19.0 60.0 7.0) (slice 45.0 60.0 7.0))
+    "6" (slice (slice 21.0 19.0 7.0) (slice 43.0 19.0 7.0) (slice 21.0 41.0 7.0) (slice 43.0 41.0 7.0) (slice 21.0 63.0 7.0) (slice 43.0 63.0 7.0))
+    "7" (slice (slice 16.0 17.0 6.0) (slice 30.0 22.0 6.0) (slice 44.0 27.0 6.0) (slice 21.0 47.0 6.0) (slice 43.0 47.0 6.0) (slice 21.0 66.0 6.0) (slice 43.0 66.0 6.0))
+    "8" (slice (slice 21.0 15.0 6.0) (slice 43.0 15.0 6.0) (slice 21.0 32.0 6.0) (slice 43.0 32.0 6.0) (slice 21.0 49.0 6.0) (slice 43.0 49.0 6.0) (slice 21.0 66.0 6.0) (slice 43.0 66.0 6.0))
+    "9" (slice (slice 17.0 19.0 6.5) (slice 32.0 19.0 6.5) (slice 47.0 19.0 6.5) (slice 17.0 41.0 6.5) (slice 32.0 41.0 6.5) (slice 47.0 41.0 6.5) (slice 17.0 63.0 6.5) (slice 32.0 63.0 6.5) (slice 47.0 63.0 6.5)) -}}
+
+{{- /* bamboo sticks: cx, cy, h, w, color key (g=green r=red) */ -}}
+{{- $sticks := dict
+    "2" (slice (slice 32.0 23.0 26.0 7.0 "g") (slice 32.0 59.0 26.0 7.0 "g"))
+    "3" (slice (slice 32.0 21.0 24.0 7.0 "g") (slice 20.0 61.0 24.0 7.0 "g") (slice 44.0 61.0 24.0 7.0 "g"))
+    "4" (slice (slice 20.0 22.0 24.0 7.0 "g") (slice 44.0 22.0 24.0 7.0 "g") (slice 20.0 60.0 24.0 7.0 "g") (slice 44.0 60.0 24.0 7.0 "g"))
+    "5" (slice (slice 20.0 21.0 22.0 7.0 "g") (slice 44.0 21.0 22.0 7.0 "g") (slice 32.0 41.0 22.0 7.0 "r") (slice 20.0 61.0 22.0 7.0 "g") (slice 44.0 61.0 22.0 7.0 "g"))
+    "6" (slice (slice 18.0 22.0 24.0 7.0 "g") (slice 32.0 22.0 24.0 7.0 "g") (slice 46.0 22.0 24.0 7.0 "g") (slice 18.0 60.0 24.0 7.0 "g") (slice 32.0 60.0 24.0 7.0 "g") (slice 46.0 60.0 24.0 7.0 "g"))
+    "7" (slice (slice 32.0 17.0 18.0 7.0 "r") (slice 18.0 45.0 18.0 7.0 "g") (slice 32.0 45.0 18.0 7.0 "g") (slice 46.0 45.0 18.0 7.0 "g") (slice 18.0 67.0 18.0 7.0 "g") (slice 32.0 67.0 18.0 7.0 "g") (slice 46.0 67.0 18.0 7.0 "g"))
+    "8" (slice (slice 14.0 22.0 24.0 5.5 "g") (slice 26.0 22.0 24.0 5.5 "g") (slice 38.0 22.0 24.0 5.5 "g") (slice 50.0 22.0 24.0 5.5 "g") (slice 14.0 60.0 24.0 5.5 "g") (slice 26.0 60.0 24.0 5.5 "g") (slice 38.0 60.0 24.0 5.5 "g") (slice 50.0 60.0 24.0 5.5 "g"))
+    "9" (slice (slice 18.0 16.0 18.0 6.5 "g") (slice 32.0 16.0 18.0 6.5 "g") (slice 46.0 16.0 18.0 6.5 "g") (slice 18.0 41.0 18.0 6.5 "r") (slice 32.0 41.0 18.0 6.5 "r") (slice 46.0 41.0 18.0 6.5 "r") (slice 18.0 66.0 18.0 6.5 "g") (slice 32.0 66.0 18.0 6.5 "g") (slice 46.0 66.0 18.0 6.5 "g")) -}}
+
+{{- $cyc := slice "var(--mj-green)" "var(--mj-red)" "var(--mj-blue)" -}}
+<span class="mj-tile mj-{{ $size }}{{ with $class }} {{ . }}{{ end }}" data-code="{{ $code }}" role="img" aria-label="{{ $label }}">
+<svg viewBox="0 0 64 88" xmlns="http://www.w3.org/2000/svg" focusable="false">
+{{- if eq $code "back" }}
+  <rect class="mj-underside" x="2" y="2" width="60" height="84" rx="9"/>
+  <rect x="9" y="9" width="46" height="70" rx="5" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.6"/>
+{{- else }}
+  <rect class="mj-underside" x="2" y="10" width="60" height="76" rx="9"/>
+  <rect class="mj-face" x="2" y="2" width="60" height="79" rx="9"/>
+  {{- if eq $suit "d" }}
+    {{- if eq $rank "1" }}
+  <circle cx="32" cy="41" r="16.5" fill="none" stroke="var(--mj-green)" stroke-width="3"/>
+  <circle cx="32" cy="41" r="11" fill="none" stroke="var(--mj-red)" stroke-width="2.4" stroke-dasharray="3.4 2.8"/>
+  <circle cx="32" cy="41" r="5.2" fill="var(--mj-red)"/>
+  <circle cx="32" cy="41" r="1.6" fill="var(--tile-face)"/>
+    {{- else }}
+      {{- range $i, $p := index $dots $rank }}
+        {{- $col := index $cyc (mod $i 3) }}
+  <circle cx="{{ index $p 0 }}" cy="{{ index $p 1 }}" r="{{ index $p 2 }}" fill="none" stroke="{{ $col }}" stroke-width="2.6"/>
+  <circle cx="{{ index $p 0 }}" cy="{{ index $p 1 }}" r="{{ printf "%.1f" (mul (index $p 2) 0.42) }}" fill="{{ $col }}"/>
+      {{- end }}
+    {{- end }}
+  {{- else if eq $suit "b" }}
+    {{- if eq $rank "1" }}
+  <path d="M20 46 L7 38 L15 50 Z" fill="var(--mj-red)"/>
+  <path d="M20 50 L6 52 L16 56 Z" fill="var(--mj-blue)"/>
+  <ellipse cx="29" cy="50" rx="13" ry="10.5" fill="var(--mj-green)"/>
+  <circle cx="39" cy="37" r="7.5" fill="var(--mj-green)"/>
+  <path d="M35 30 L38 23 L41 29 Z" fill="var(--mj-red)"/>
+  <path d="M45 36 L54 39 L45 42 Z" fill="var(--mj-gold)"/>
+  <circle cx="40.5" cy="36" r="1.5" fill="var(--tile-face)"/>
+  <path d="M23 49 Q29 56 37 51" stroke="var(--tile-face)" stroke-width="2" fill="none" opacity=".7"/>
+  <path d="M26 60 L24 69 M24 69 L20 71 M32 60 L33 69 M33 69 L37 71" stroke="var(--mj-red)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    {{- else }}
+      {{- range $i, $s := index $sticks $rank }}
+        {{- $cx := index $s 0 }}{{ $cy := index $s 1 }}{{ $h := index $s 2 }}{{ $w := index $s 3 }}
+        {{- $col := "var(--mj-green)" }}{{ if eq (index $s 4) "r" }}{{ $col = "var(--mj-red)" }}{{ end }}
+  <rect x="{{ printf "%.2f" (sub $cx (div $w 2)) }}" y="{{ printf "%.2f" (sub $cy (div $h 2)) }}" width="{{ $w }}" height="{{ $h }}" rx="{{ printf "%.2f" (mul $w 0.45) }}" fill="{{ $col }}"/>
+  <rect x="{{ printf "%.2f" (sub $cx (add (div $w 2) 1)) }}" y="{{ printf "%.2f" (sub $cy 1) }}" width="{{ printf "%.2f" (add $w 2) }}" height="2" rx="1" fill="var(--tile-face)" opacity=".9"/>
+      {{- end }}
+    {{- end }}
+  {{- else if eq $suit "c" }}
+  <text x="32" y="37" text-anchor="middle" class="mj-zh" font-size="28" fill="var(--mj-blue)">{{ index $numerals $rank }}</text>
+  <text x="32" y="73" text-anchor="middle" class="mj-zh" font-size="30" fill="var(--mj-red)">萬</text>
+  {{- else if isset $winds $code }}
+    {{- $w := index $winds $code }}
+  <text x="11" y="18" class="mj-lat" font-size="11" fill="var(--mj-red)">{{ $w.abbr }}</text>
+  <text x="32" y="57" text-anchor="middle" class="mj-zh" font-size="40" fill="var(--mj-ink)">{{ $w.zh }}</text>
+  {{- else if eq $code "dr" }}
+  <text x="32" y="58" text-anchor="middle" class="mj-zh" font-size="44" fill="var(--mj-red)">中</text>
+  {{- else if eq $code "dg" }}
+  <text x="32" y="56" text-anchor="middle" class="mj-zh" font-size="40" fill="var(--mj-green)">發</text>
+  {{- else if eq $code "dw" }}
+  <rect x="15" y="13" width="34" height="57" rx="3.5" fill="none" stroke="var(--mj-blue)" stroke-width="3"/>
+  <rect x="22" y="20" width="20" height="43" rx="2" fill="none" stroke="var(--mj-blue)" stroke-width="1.6" stroke-dasharray="4 3"/>
+  {{- else if isset $flowers $code }}
+    {{- $f := index $flowers $code }}
+    {{- $main := "var(--mj-red)" }}{{ $corner := "var(--mj-blue)" }}
+    {{- if eq $f.tone "blue" }}{{ $main = "var(--mj-blue)" }}{{ $corner = "var(--mj-red)" }}{{ end }}
+  <text x="11" y="19" class="mj-lat" font-size="12" fill="{{ $corner }}">{{ $f.n }}</text>
+  <text x="32" y="58" text-anchor="middle" class="mj-zh" font-size="36" fill="{{ $main }}">{{ $f.zh }}</text>
+  {{- else }}
+  <text x="32" y="55" text-anchor="middle" class="mj-lat" font-size="30" fill="var(--mj-ink)">?</text>
+  {{- end }}
+{{- end }}
+</svg>
+</span>

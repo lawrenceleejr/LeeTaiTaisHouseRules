@@ -1,0 +1,141 @@
+sections:
+  - title: "The calls"
+    entries:
+      - han: 上
+        rom: seung
+        lit: "up"
+        def: "Claim your **left neighbor's** discard to complete a run. The polite little sibling of the calls."
+      - han: 碰
+        rom: pong
+        lit: "collide"
+        def: "Claim **anyone's** discard to complete a triplet. Beats a seung. Sounds exactly like what it does."
+      - han: 槓
+        rom: gong
+        lit: "kong"
+        def: "Four of a kind — open, added, or concealed. Comes with a bonus replacement draw from the tail of the wall."
+      - han: 食糊
+        rom: sik wu
+        lit: "eat the win"
+        def: "The winning declaration. The word every other rule on this site exists to deliver."
+      - han: 自摸
+        rom: zi mo
+        lit: "self-touch"
+        def: "Winning on your own draw. Everyone pays double, which is why it's announced at the volume it's announced at."
+      - han: 太碰
+        rom: tai-pong
+        lit: "thinking about ponging"
+        def: "The formal announcement that you are *considering* a Pong. Claims nothing, commits nothing, terrifies everyone. A family invention and a diplomatic triumph."
+      - han: 補花
+        rom: bou faa
+        lit: "patch the flower"
+        def: "Setting a drawn flower aside and taking a replacement tile from the back of the wall."
+  - title: "States of being"
+    entries:
+      - han: 聽牌
+        rom: ting paai
+        lit: "listening for the tile"
+        def: "One tile from winning. Symptoms include sudden quiet, careful breathing, and fooling absolutely no one."
+      - han: 門前清
+        rom: mun cin cing
+        lit: "clean in front of the door"
+        def: "A hand built with zero claims — fully concealed. On the family card the cash arrives via the silent fortress (four concealed Pongs + Zi-Mo, 6 points); the smugness arrives free."
+      - han: 莊
+        rom: zong
+        lit: "the banker"
+        def: "The dealer. Wins bigger, loses bigger, and at this table, keeps the deal by winning (連莊 lin zong)."
+      - han: 上家 / 下家
+        rom: seung gaa / haa gaa
+        lit: "upper house / lower house"
+        def: "Your left neighbor (whose discards you can seung) and your right neighbor (who can seung yours). Choose your enemies accordingly."
+      - han: 三缺一
+        rom: saam kyut yat
+        lit: "three lacking one"
+        def: "Three players, no fourth. The most emotionally coercive phrase in the language; legally binding on anyone within earshot."
+      - han: 開檯
+        rom: hoi toi
+        lit: "open the table"
+        def: "The summons to play. Once spoken, dinner plans dissolve and schedules rearrange themselves."
+  - title: "Winning & losing"
+    entries:
+      - han: 番
+        rom: faan
+        lit: "a double"
+        def: "A point, in the family vernacular. Each one doubles the payout up the ladder. Count them out loud — it's customary and it's cardio."
+      - han: 雞糊
+        rom: gai wu
+        lit: "chicken hand"
+        def: "A zero-point win — legal here, and it pays the base stake, which is literally named after it. Humble. Honest. Poultry."
+      - han: 平糊
+        rom: ping wu
+        lit: "level win"
+        def: "All runs plus eyes. Worth 1 point and the quiet respect owed to anyone who ships something on time."
+      - han: 對對糊
+        rom: deui deui wu
+        lit: "pair-pair win"
+        def: "All triplets. 3 points of pure clack. The loudest architecture available to a legal hand."
+      - han: 混一色
+        rom: wan yat sik
+        lit: "mixed one color"
+        def: "One suit plus honors. 3 points. Committed, but keeps its options — the situationship of hands."
+      - han: 清一色
+        rom: cing yat sik
+        lit: "pure one color"
+        def: "One suit, nothing else. 6 points — straight to the Spicy cap. Monochrome outfit energy; everyone saw it coming and couldn't stop it. See also: 9-cards."
+      - han: 大三元
+        rom: daai saam yun
+        lit: "big three dragons"
+        def: "Triplets of all three dragons. 6 points — the cap — and a story your table will tell at your wedding."
+      - han: 十三幺
+        rom: sap saam jiu
+        lit: "thirteen orphans"
+        def: "One of every terminal and honor plus a pair. 6 points, the cap. Irrational to attempt, immortal to land."
+      - han: 七對子
+        rom: chat deui zi
+        lit: "seven pairs"
+        def: "A legal hand of seven pairs — no legs, all eyes. 4 points for fourteen tiles of pure hoarding behavior."
+      - han: 九張
+        rom: gau zoeng · "9-cards!"
+        lit: "nine cards"
+        def: "The on-record warning that someone's exposed melds show nine tiles of one suit. Feed the full flush after this and you pay **all** debts. You were warned. Out loud."
+      - han: 出銃
+        rom: ceot cung
+        lit: "fire the cannon"
+        def: "Discarding the tile someone wins on. You pay double — and if '9-cards' was on record for a full flush, you pay everyone's shares. Nothing personal; entirely your fault."
+      - han: 詐糊
+        rom: zaa wu
+        lit: "fraudulent win"
+        def: "Declaring a win you don't have. Pays the table maximum and renames you 'Professor' until further notice."
+      - han: 截糊
+        rom: zit wu
+        lit: "intercepted win"
+        def: "Two players want the same winning discard; the one closer in turn order takes it. The other one remembers it forever."
+      - han: 海底撈月
+        rom: hoi dai laau jyut
+        lit: "scoop the moon from the sea"
+        def: "Winning on the very last live tile of the wall. No points on the family card — just instant legend status and the name of somebody's future boba shop."
+  - title: "Table talk & vibes"
+    entries:
+      - han: 太太
+        rom: taai taai
+        lit: "madam of the house"
+        def: "The matriarch, the commissioner, the final court of appeal. This site is her jurisdiction; we just play in it."
+      - han: 麻雀
+        rom: maa zoek
+        lit: "sparrow"
+        def: "The game itself — named, allegedly, for the sound of tiles being washed. The sparrows should be flattered."
+      - han: 洗牌
+        rom: sai paai
+        lit: "wash the tiles"
+        def: "The full-volume face-down shuffle. Doubles as the household announcement system that a game is forming."
+      - han: 辣
+        rom: laat · "Spicy"
+        lit: "spicy"
+        def: "The 6-point cap on the doubling ladder. Past this point you're playing for glory, which is the point."
+      - han: 發財
+        rom: faat coi
+        lit: "get rich"
+        def: "The green dragon's full name and the table's collective mission statement. See also: every Lunar New Year greeting."
+      - han: 流局
+        rom: lau guk
+        lit: "washed-out hand"
+        def: "The wall runs out with no winner. Nobody pays, the dealer re-deals, and the next hand is declared 'the real one.'"

@@ -1,0 +1,117 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-wrap">
+    <div class="hero-copy">
+      <p class="hero-kicker"><span class="hero-kicker-zh" lang="zh-Hant">麻雀</span> · a field guide to the family table</p>
+      <h1 class="hero-title">Lee&nbsp;TaiTai’s <em>House&nbsp;Rules</em></h1>
+      <p class="hero-sub">{{ site.Params.subtitle }}</p>
+      <p class="hero-lede">
+        Hong Kong–style mahjong, explained the way it was always meant to be:
+        by someone who loves you but will absolutely take your money.
+        No gatekeeping, no 40-page rulebook energy — just the game, the slang,
+        and the house rules your aunties never wrote down. Until now.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="{{ (site.GetPage "/learn").RelPermalink }}">Start from zero</a>
+        <a class="btn btn-ghost" href="{{ (site.GetPage "/learn/house-rules").RelPermalink }}">I know mahjong — show me the house rules</a>
+      </div>
+    </div>
+    <div class="hero-tiles" aria-hidden="true">
+      {{ partial "tile.html" (dict "code" "we" "size" "xl" "class" "fan fan-1") }}
+      {{ partial "tile.html" (dict "code" "d1" "size" "xl" "class" "fan fan-2") }}
+      {{ partial "tile.html" (dict "code" "dr" "size" "xl" "class" "fan fan-3") }}
+      {{ partial "tile.html" (dict "code" "b1" "size" "xl" "class" "fan fan-4") }}
+      {{ partial "tile.html" (dict "code" "c9" "size" "xl" "class" "fan fan-5") }}
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {{- $phrases := slice
+      "洗牌 — wash the tiles, loudly"
+      "碰 pong!"
+      "上 seung!"
+      "槓 gong!"
+      "食糊 — that’s a win, pay up"
+      "自摸 — self-draw, double smug"
+      "聽牌 — one away, act natural"
+      "太碰 — officially thinking about it"
+      "十三幺 — thirteen orphans, call the group chat"
+      "九張 — you were warned"
+      "辣 — six points, capped, Spicy"
+      "詐糊 — false win, eternal shame"
+    }}
+    {{- range seq 2 }}
+    <span class="marquee-run">
+      {{- range $phrases }}<span class="marquee-item">{{ . }}</span><span class="marquee-dot">✦</span>{{ end -}}
+    </span>
+    {{- end }}
+  </div>
+</div>
+
+<section class="chapters">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The curriculum</h2>
+      <p>Seven short chapters. Read them in order, or don’t — TaiTai isn’t your real auntie. (She’s meaner.)</p>
+    </div>
+    <div class="chapter-grid">
+      {{- range (where site.RegularPages "Section" "learn").ByWeight }}
+      <a class="chapter-card" href="{{ .RelPermalink }}">
+        <span class="chapter-num">{{ printf "%02d" .Weight }}</span>
+        <span class="chapter-body">
+          <span class="chapter-title">{{ .Title }}</span>
+          <span class="chapter-desc">{{ .Description }}</span>
+        </span>
+        <span class="chapter-arrow" aria-hidden="true">→</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="wrap">
+    <blockquote>
+      <p>“If you have time to complain about your tiles, you have time to discard.”</p>
+      <cite>— Lee TaiTai, every single week since 1989</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap feature-grid">
+    <div class="feature">
+      <p class="feature-zh" lang="zh-Hant">正</p>
+      <h3>Actually learnable</h3>
+      <p>Every rule in plain English, every tile drawn out, every term with its Cantonese. You’ll be losing gracefully by Friday.</p>
+    </div>
+    <div class="feature">
+      <p class="feature-zh" lang="zh-Hant">規</p>
+      <h3>House rules, clearly flagged</h3>
+      <p>Standard Hong Kong rules and Lee-family law are labeled separately, so you know exactly which arguments you can win. (Neither.)</p>
+    </div>
+    <div class="feature">
+      <p class="feature-zh" lang="zh-Hant">囍</p>
+      <h3>Zero gatekeeping</h3>
+      <p>Grew up hearing the tiles clack through the wall but nobody taught you? This site is the seat at the table you were owed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ref-teasers">
+  <div class="wrap teaser-grid">
+    <a class="teaser-card teaser-glossary" href="{{ (site.GetPage "/glossary").RelPermalink }}">
+      <h3>The glossary</h3>
+      <p>From <span class="zh"><span class="zh-han" lang="zh-Hant">食糊</span><span class="zh-rom">sik wu</span></span> to <span class="zh"><span class="zh-han" lang="zh-Hant">詐糊</span><span class="zh-rom">za wu</span></span> — talk the talk before you clack the clack.</p>
+      <span class="teaser-link">Browse the lingo →</span>
+    </a>
+    <a class="teaser-card teaser-cheat" href="{{ (site.GetPage "/cheat-sheet").RelPermalink }}">
+      <h3>The cheat sheet</h3>
+      <p>One page. Scoring, claims, and the payment math. Print it, tape it inside the snack cabinet, thank us later.</p>
+      <span class="teaser-link">Get the crib notes →</span>
+    </a>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,8 @@
+{{- /* {{< houserule >}}the rule{{< /houserule >}} — optional title="..." */ -}}
+<aside class="callout callout-houserule">
+  <div class="callout-badge" aria-hidden="true"><span>規</span></div>
+  <div class="callout-body">
+    <p class="callout-title">{{ .Get "title" | default "House rule" }}</p>
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

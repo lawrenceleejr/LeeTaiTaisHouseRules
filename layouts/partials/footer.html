@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="wrap footer-wrap">
+    <div class="footer-brand">
+      <p class="footer-logo"><span class="brand-seal" aria-hidden="true">李</span> Lee TaiTai’s House Rules</p>
+      <p class="footer-tag">{{ site.Params.subtitle }}</p>
+      <p class="footer-snark">Made with love, MSG, and zero tolerance for slow discards.</p>
+      <p class="footer-credit">Made possible by the <em>Adopt&nbsp;A&nbsp;Jook&nbsp;Sing&nbsp;Project</em> <span lang="zh-Hant">竹升領養計劃</span>.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <p class="footer-head">The curriculum</p>
+      {{- range (where site.RegularPages "Section" "learn").ByWeight }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- end }}
+    </nav>
+    <nav class="footer-nav" aria-label="Reference">
+      <p class="footer-head">Reference</p>
+      <a href="{{ (site.GetPage "/glossary").RelPermalink }}">Glossary</a>
+      <a href="{{ (site.GetPage "/cheat-sheet").RelPermalink }}">Cheat sheet</a>
+      <a href="{{ (site.GetPage "/learn").RelPermalink }}">Start from zero</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© {{ now.Year }} the Lee family table. All rights reserved, especially the lucky seat.</p>
+    <p>No tiles were harmed. Several egos were.</p>
+  </div>
+</footer>

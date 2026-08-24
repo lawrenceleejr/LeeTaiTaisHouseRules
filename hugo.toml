@@ -1,0 +1,38 @@
+baseURL = 'https://lawrenceleejr.github.io/LeeTaiTaisHouseRules/'
+languageCode = 'en-us'
+title = "Lee TaiTai's House Rules"
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  subtitle = 'One game. Two eyes. Three suits. Four legs.'
+  description = "A gloriously opinionated field guide to Hong Kong–style mahjong, as played (and enforced) at the Lee family table since forever."
+  tagline = "Learn mahjong the way you were supposed to: loudly, at a folding table, with snacks."
+
+[menus]
+  [[menus.main]]
+    name = 'Learn'
+    pageRef = '/learn'
+    weight = 10
+  [[menus.main]]
+    name = 'Glossary'
+    pageRef = '/glossary'
+    weight = 20
+  [[menus.main]]
+    name = 'Cheat Sheet'
+    pageRef = '/cheat-sheet'
+    weight = 30
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+  [markup.highlight]
+    noClasses = true
+
+[outputs]
+  home = ['html', 'sitemap']
+  section = ['html']
+  page = ['html']

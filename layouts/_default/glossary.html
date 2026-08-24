@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="doc">
+  <header class="doc-hero">
+    <div class="wrap doc-hero-wrap">
+      <p class="doc-kicker">{{ .Params.kicker | default "Reference" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{- with .Description }}<p class="doc-lede">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="doc-content prose section-intro">
+      {{ .Content }}
+    </div>
+    {{- range site.Data.glossary.sections }}
+    <section class="gloss-section">
+      <h2>{{ .title }}</h2>
+      <div class="gloss-grid">
+        {{- range .entries }}
+        <div class="gloss-card">
+          <p class="gloss-han" lang="zh-Hant">{{ .han }}</p>
+          <p class="gloss-term">{{ .rom }}</p>
+          <p class="gloss-lit">{{ .lit }}</p>
+          <p class="gloss-def">{{ .def | markdownify }}</p>
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  </div>
+</article>
+{{ end }}

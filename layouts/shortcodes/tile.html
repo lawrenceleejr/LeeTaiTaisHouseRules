@@ -1,0 +1,4 @@
+{{- /* Inline tile: {{< tile b3 >}} or {{< tile code="b3" size="sm" >}} */ -}}
+{{- $code := .Get 0 | default (.Get "code") -}}
+{{- $size := .Get "size" | default "sm" -}}
+{{- partial "tile.html" (dict "code" $code "size" $size "class" "mj-inline") -}}

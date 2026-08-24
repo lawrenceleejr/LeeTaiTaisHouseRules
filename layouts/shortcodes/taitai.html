@@ -1,0 +1,8 @@
+{{- /* {{< taitai >}}wisdom{{< /taitai >}} — optional title="..." */ -}}
+<aside class="callout callout-taitai">
+  <div class="callout-badge" aria-hidden="true"><span>太</span></div>
+  <div class="callout-body">
+    <p class="callout-title">{{ .Get "title" | default "TaiTai says" }}</p>
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

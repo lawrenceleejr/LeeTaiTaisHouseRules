@@ -1,0 +1,23 @@
+{{- /*
+  A row of tiles, optionally captioned.
+    {{< hand tiles="b1 b2 b3 | d5 d5" caption="a run and a pair" size="md" >}}
+  "|" inserts a group gap, "_" is a face-down tile, "*" after a code highlights it
+  (e.g. "d5*" for “this is the tile you’re waiting on”).
+*/ -}}
+{{- $size := .Get "size" | default "md" -}}
+<figure class="mj-hand{{ with .Get "class" }} {{ . }}{{ end }}">
+  <div class="mj-hand-row">
+  {{- range split (.Get "tiles") " " }}
+    {{- $t := trim . " " }}
+    {{- if eq $t "" }}{{ continue }}{{ end }}
+    {{- if eq $t "|" }}<span class="mj-gap" aria-hidden="true"></span>
+    {{- else }}
+      {{- $hl := "" }}
+      {{- if strings.HasSuffix $t "*" }}{{ $hl = "mj-hl" }}{{ $t = strings.TrimSuffix "*" $t }}{{ end }}
+      {{- if eq $t "_" }}{{ $t = "back" }}{{ end }}
+      {{- partial "tile.html" (dict "code" $t "size" $size "class" $hl) }}
+    {{- end }}
+  {{- end }}
+  </div>
+  {{- with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

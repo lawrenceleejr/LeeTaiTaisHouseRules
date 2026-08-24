@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $title := site.Title }}
+{{- if not .IsHome }}{{ $title = printf "%s · %s" .Title site.Title }}{{ end }}
+<title>{{ $title }}</title>
+{{- $desc := .Description | default site.Params.description }}
+<meta name="description" content="{{ $desc }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="data:image/svg+xml,{{ `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23c43d2f'/><text x='50' y='72' font-size='62' text-anchor='middle' fill='%23fbf7ef' font-family='serif' font-weight='700'>李</text></svg>` | safeURL }}">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ltt-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+{{- $fonts := resources.Get "css/fonts.css" }}
+{{- $main := resources.Get "css/main.css" }}
+{{- $css := slice $fonts $main | resources.Concat "css/bundle.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- range site.Menus.main }}
+<link rel="prefetch" href="{{ .URL }}">
+{{- end }}
