@@ -96,6 +96,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 1rem);
 }
@@ -406,9 +407,18 @@ h4 {
 .hero-wrap {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  justify-items: center;
+  text-align: center;
+}
+
+/* the logo animation is the hero image: full width, centre stage */
+.hero-stage {
+  width: 100%;
+}
+
+.hero-copy {
+  max-width: 58rem;
 }
 
 .hero-kicker {
@@ -455,6 +465,7 @@ h4 {
 
 .hero-lede {
   max-width: 54ch;
+  margin-inline: auto;
   font-size: var(--fs-md);
   line-height: 1.55;
   color: var(--muted);
@@ -464,44 +475,13 @@ h4 {
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.8rem;
 }
 
-.hero-tiles {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 1.5rem;
-}
-
-.hero-tiles .fan {
-  position: relative;
-  transition: transform 0.25s ease;
-}
-
-.hero-tiles .fan:hover {
-  transform: translateY(-14px) !important;
-}
-
-/* z-index pyramid so the center tile leads the fan */
-.fan-1 { transform: rotate(-18deg) translateY(28px); z-index: 1; }
-.fan-2 { transform: rotate(-9deg) translateY(9px); margin-left: -12px; z-index: 2; }
-.fan-3 { transform: rotate(0deg); margin-left: -12px; z-index: 3; }
-.fan-4 { transform: rotate(9deg) translateY(9px); margin-left: -12px; z-index: 2; }
-.fan-5 { transform: rotate(18deg) translateY(28px); margin-left: -12px; z-index: 1; }
-
 @media (max-width: 860px) {
-  .hero-wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-tiles {
-    order: -1;
-    padding-bottom: 0;
-  }
-
-  .hero-tiles .mj-xl svg {
-    width: 64px;
+  .hero-title {
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
   }
 }
 
@@ -1430,7 +1410,10 @@ h4 {
    ============================================================ */
 .logo-anim {
   --loop: 9.9s;
-  --tw: clamp(2.9rem, 6.4vw, 4.1rem);
+  --tw: clamp(3.4rem, 6.8vw, 6.1rem);
+  /* how far the churn fans out horizontally — wider stages spread more */
+  --kx: 2.1;
+  --ky: 1;
   --th: calc(var(--tw) * 1.375);
   --felt: #123f2e;
   --felt-deep: #0c2a1f;
@@ -1438,8 +1421,8 @@ h4 {
   --brass: #c4922c;
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 4;
-  border-radius: 1.25rem;
+  aspect-ratio: 16 / 5.9;
+  border-radius: 1.5rem;
   overflow: hidden;
   background:
     radial-gradient(120% 90% at 50% 18%, rgba(255, 255, 255, 0.09), transparent 62%),
@@ -1456,19 +1439,7 @@ h4 {
   perspective: 1000px;
 }
 
-/* shared tile chrome */
-.la-churn,
-.la-face {
-  position: absolute;
-  width: var(--tw);
-  height: var(--th);
-  border-radius: calc(var(--tw) * 0.14);
-  left: 50%;
-  top: 50%;
-  margin-left: calc(var(--tw) / -2);
-  margin-top: calc(var(--th) / -2);
-}
-
+/* face-down tile chrome, shared by the churn crowd and the trio's backs */
 .la-churn,
 .la-back {
   background: linear-gradient(150deg, #38a077 0%, #24785a 52%, #1a5f47 100%);
@@ -1479,18 +1450,26 @@ h4 {
 }
 
 .la-churn {
+  position: absolute;
+  width: var(--tw);
+  height: var(--th);
+  border-radius: calc(var(--tw) * 0.14);
+  left: 50%;
+  top: 50%;
+  margin-left: calc(var(--tw) / -2);
+  margin-top: calc(var(--th) / -2);
+  transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar));
   animation: la-churn var(--loop) cubic-bezier(0.65, 0, 0.35, 1) infinite;
-  transform: translate(var(--ax), var(--ay)) rotate(var(--ar));
 }
 
 @keyframes la-churn {
-  0% { transform: translate(var(--ax), var(--ay)) rotate(var(--ar)); opacity: 1; }
-  7% { transform: translate(var(--bx), var(--by)) rotate(var(--br)); opacity: 1; }
-  14% { transform: translate(var(--cx), var(--cy)) rotate(var(--cr)); opacity: 1; }
-  19.19% { transform: translate(var(--bx), var(--by)) rotate(var(--br)); opacity: 1; }
-  27.27% { transform: translate(var(--ox), var(--oy)) rotate(var(--or)); opacity: 0; }
-  88.89% { transform: translate(var(--ox), var(--oy)) rotate(var(--or)); opacity: 0; }
-  100% { transform: translate(var(--ax), var(--ay)) rotate(var(--ar)); opacity: 1; }
+  0% { transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar)); opacity: 1; }
+  7% { transform: translate(calc(var(--bx) * var(--kx)), calc(var(--by) * var(--ky))) rotate(var(--br)); opacity: 1; }
+  14% { transform: translate(calc(var(--cx) * var(--kx)), calc(var(--cy) * var(--ky))) rotate(var(--cr)); opacity: 1; }
+  19.19% { transform: translate(calc(var(--bx) * var(--kx)), calc(var(--by) * var(--ky))) rotate(var(--br)); opacity: 1; }
+  27.27% { transform: translate(calc(var(--ox) * var(--kx)), calc(var(--oy) * var(--ky))) rotate(var(--or)); opacity: 0; }
+  88.89% { transform: translate(calc(var(--ox) * var(--kx)), calc(var(--oy) * var(--ky))) rotate(var(--or)); opacity: 0; }
+  100% { transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar)); opacity: 1; }
 }
 
 /* the lockup: three tiles + wordmark, breathing gently through the hold */
@@ -1499,7 +1478,7 @@ h4 {
   inset: 0;
   display: grid;
   place-content: center;
-  gap: calc(var(--tw) * 0.42);
+  gap: calc(var(--tw) * 0.38);
   animation: la-breathe 3.4s ease-in-out infinite alternate;
 }
 
@@ -1510,20 +1489,40 @@ h4 {
 
 .la-row {
   position: relative;
-  width: calc(var(--tw) * 3.4);
+  width: calc(var(--tw) * 3.6);
   height: var(--th);
+  perspective: 800px;
 }
 
+/* outer layer moves and fades — kept off the flip so opacity never
+   flattens the 3D context and unhides the backface */
 .la-tile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--tw);
+  height: var(--th);
+  margin-left: calc(var(--tw) / -2);
+  margin-top: calc(var(--th) / -2);
+  transform: translate(calc(var(--fx) * var(--kx)), -150%) rotate(var(--fr));
+  opacity: 0;
+  animation: la-tile var(--loop) cubic-bezier(0.2, 0.9, 0.25, 1) infinite;
+  animation-delay: var(--d);
+}
+
+/* inner layer only ever rotates, so preserve-3d stays intact */
+.la-flip {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  transform: translate(var(--fx), -150%) rotate(var(--fr));
-  opacity: 0;
-  animation: la-tile var(--loop) cubic-bezier(0.2, 0.9, 0.25, 1) infinite;
+  animation: la-flip var(--loop) cubic-bezier(0.2, 0.9, 0.25, 1) infinite;
+  animation-delay: var(--d);
 }
 
 .la-face {
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--tw) * 0.14);
   backface-visibility: hidden;
 }
 
@@ -1544,19 +1543,24 @@ h4 {
 
 @keyframes la-tile {
   /* shuffle: waiting offstage */
-  0%, 19.19% { transform: translate(var(--fx), -150%) rotate(var(--fr)); opacity: 0; }
+  0%, 19.19% { transform: translate(calc(var(--fx) * var(--kx)), -150%) rotate(var(--fr)); opacity: 0; }
   /* stack: drop into the row, face-down */
   23% { opacity: 1; }
-  27.27% { transform: translate(var(--row), 0) rotate(0deg); opacity: 1; }
-  /* reveal: lift, turn over, slam down */
-  32% { transform: translate(var(--row), -26%) scale(1.07) rotateY(0deg); opacity: 1; }
-  39% { transform: translate(var(--row), -30%) scale(1.07) rotateY(180deg); opacity: 1; }
-  43% { transform: translate(var(--row), 0) scale(1) rotateY(180deg); opacity: 1; }
-  45% { transform: translate(var(--row), 0) scale(1.04, 0.96) rotateY(180deg); opacity: 1; }
+  27.27% { transform: translate(var(--row), 0) rotate(0deg) scale(1); opacity: 1; }
+  /* reveal: lift, turn over mid-air, slam down */
+  32% { transform: translate(var(--row), -26%) scale(1.07); opacity: 1; }
+  39% { transform: translate(var(--row), -30%) scale(1.07); opacity: 1; }
+  43% { transform: translate(var(--row), 0) scale(1); opacity: 1; }
+  45% { transform: translate(var(--row), 0) scale(1.05, 0.95); opacity: 1; }
   /* hold */
-  48.48%, 88.89% { transform: translate(var(--row), 0) scale(1) rotateY(180deg); opacity: 1; }
+  48.48%, 88.89% { transform: translate(var(--row), 0) scale(1); opacity: 1; }
   /* scatter: swept off the felt */
-  100% { transform: translate(var(--sx), 140%) rotate(var(--sr)) rotateY(180deg); opacity: 0; }
+  100% { transform: translate(calc(var(--sx) * var(--kx)), 140%) rotate(var(--sr)); opacity: 0; }
+}
+
+@keyframes la-flip {
+  0%, 32% { transform: rotateY(0deg); }
+  39%, 100% { transform: rotateY(180deg); }
 }
 
 .la-wordmark {
@@ -1564,7 +1568,7 @@ h4 {
   text-align: center;
   font-family: 'Alfa Slab One', var(--font-display), serif;
   font-weight: 400;
-  font-size: calc(var(--tw) * 0.46);
+  font-size: calc(var(--tw) * 0.5);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
@@ -1588,14 +1592,22 @@ h4 {
   100% { opacity: 0; transform: translateY(70%); }
 }
 
+@media (max-width: 860px) {
+  .logo-anim {
+    aspect-ratio: 4 / 3;
+    --kx: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .la-churn { animation: none; opacity: 0; }
   .la-lockup { animation: none; }
   .la-tile {
     animation: none;
     opacity: 1;
-    transform: translate(var(--row), 0) rotateY(180deg);
+    transform: translate(var(--row), 0);
   }
+  .la-flip { animation: none; transform: rotateY(180deg); }
   .la-wordmark { animation: none; opacity: 1; transform: none; }
 }
 
@@ -1623,49 +1635,62 @@ h4 {
   position: sticky;
   top: 0;
   height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vh, 3rem);
   overflow: hidden;
   perspective: 1200px;
 }
 
-.tile-reveal-tile,
-.tile-reveal-text {
-  grid-area: 1 / 1;
-}
-
 .tile-reveal-tile {
   position: relative;
+  flex: none;
   width: var(--gw);
   height: var(--gh);
+  --d: calc(var(--gw) * 0.18);
   transform-style: preserve-3d;
-  /* floats up, drifts back in depth, and turns over across the scroll */
+  /* wobble damps to nothing so the tumble settles dead-on at the end */
+  --damp: calc(1 - var(--p));
+  /* plain fallback where trig functions are unsupported */
   transform:
-    translateY(calc((0.5 - var(--p)) * 26vh))
-    translateZ(calc(var(--p) * -60px))
-    rotateX(calc((0.5 - var(--p)) * 16deg))
-    rotateY(calc(var(--p) * 180deg))
-    scale(calc(1 + (1 - var(--p)) * 0.14));
+    translateY(calc((0.5 - var(--p)) * 18vh))
+    rotateY(calc(180deg + var(--p) * 540deg))
+    scale(calc(1 + (1 - var(--p)) * 0.08));
+}
+
+@supports (rotate: calc(sin(1) * 1deg)) {
+  .tile-reveal-tile {
+    transform:
+      translateY(calc((0.5 - var(--p)) * 18vh))
+      translateX(calc(sin(var(--p) * 540deg) * 5vw * var(--damp)))
+      rotateY(calc(180deg + var(--p) * 540deg))
+      rotateX(calc(cos(var(--p) * 720deg) * 17deg * var(--damp)))
+      rotateZ(calc(sin(var(--p) * 900deg) * 15deg * var(--damp)))
+      scale(calc(1 + (1 - var(--p)) * 0.08));
+  }
 }
 
 .trt-face {
   position: absolute;
-  inset: 0;
-  border-radius: calc(var(--gw) * 0.1);
   backface-visibility: hidden;
 }
 
+/* only the outer faces are rounded; square edges keep the seams closed */
+.trt-front,
 .trt-back {
-  background: linear-gradient(150deg, #38a077 0%, #24785a 52%, #1a5f47 100%);
-  box-shadow:
-    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
-    inset 0 -8px 18px rgba(0, 0, 0, 0.3),
-    0 30px 60px -22px rgba(0, 0, 0, 0.55);
+  border-radius: calc(var(--gw) * 0.045);
+}
+
+.trt-front,
+.trt-back {
+  inset: 0;
 }
 
 .trt-front {
   background: linear-gradient(168deg, #fffdf2 0%, #f4ecd7 100%);
-  transform: rotateY(180deg);
+  transform: translateZ(calc(var(--d) / 2));
   display: grid;
   place-items: center;
   font-family: var(--font-zh);
@@ -1674,41 +1699,73 @@ h4 {
   color: var(--mj-red);
   box-shadow:
     inset 0 0 0 2px rgba(196, 146, 44, 0.42),
-    inset 0 -10px 20px rgba(120, 96, 40, 0.16),
-    0 30px 60px -22px rgba(0, 0, 0, 0.5);
+    inset 0 -10px 20px rgba(120, 96, 40, 0.16);
 }
 
+.trt-back {
+  background: linear-gradient(150deg, #38a077 0%, #24785a 52%, #1a5f47 100%);
+  transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* bone-coloured sides — the actual thickness of the tile */
+.trt-edge {
+  background: linear-gradient(180deg, #fdf8e9 0%, #ece0c4 55%, #d8c9a8 100%);
+  box-shadow: inset 0 0 0 1px rgba(150, 125, 70, 0.25);
+}
+
+.trt-l,
+.trt-r {
+  width: var(--d);
+  height: 100%;
+  top: 0;
+  left: calc(50% - var(--d) / 2);
+}
+
+.trt-l { transform: rotateY(-90deg) translateZ(calc(var(--gw) / 2)); }
+.trt-r { transform: rotateY(90deg) translateZ(calc(var(--gw) / 2)); }
+
+.trt-t,
+.trt-b {
+  width: 100%;
+  height: var(--d);
+  left: 0;
+  top: calc(50% - var(--d) / 2);
+  background: linear-gradient(90deg, #fdf8e9 0%, #ece0c4 55%, #d8c9a8 100%);
+}
+
+.trt-t { transform: rotateX(90deg) translateZ(calc(var(--gh) / 2)); }
+.trt-b { transform: rotateX(-90deg) translateZ(calc(var(--gh) / 2)); }
+
 .tile-reveal-text {
-  position: relative;
-  z-index: 1;
   margin: 0;
-  max-width: min(46rem, 88vw);
+  max-width: min(48rem, 90vw);
   text-align: center;
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(1.7rem, 5.4vw, 3.4rem);
-  line-height: 1.12;
+  font-size: clamp(1.5rem, 4.4vw, 2.9rem);
+  line-height: 1.15;
   color: var(--ink);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.16em 0.34em;
-  pointer-events: none;
+  gap: 0.14em 0.34em;
 }
 
-/* each phrase lands in turn across the back half of the scroll */
+/* each phrase lands in turn once the tile is face-up */
 .trt-word {
-  --start: 0.34;
-  --span: 0.15;
+  --start: 0.5;
+  --span: 0.12;
   --t: clamp(0, calc((var(--p) - var(--start)) / var(--span)), 1);
   opacity: var(--t);
-  transform: translateY(calc((1 - var(--t)) * 0.5em));
+  transform: translateY(calc((1 - var(--t)) * 0.6em));
 }
 
-.trt-word:nth-child(2) { --start: 0.46; }
-.trt-word:nth-child(3) { --start: 0.58; }
-.trt-word:nth-child(4) { --start: 0.7; }
-.trt-word:nth-child(4) { color: var(--red); }
+.trt-word:nth-child(2) { --start: 0.61; }
+.trt-word:nth-child(3) { --start: 0.72; }
+.trt-word:nth-child(4) { --start: 0.83; color: var(--red); }
 
 @media (prefers-reduced-motion: reduce) {
   .tile-reveal-track { height: auto; }
@@ -1718,8 +1775,6 @@ h4 {
     padding-block: 5rem;
     gap: 2.5rem;
   }
-  .tile-reveal-tile,
-  .tile-reveal-text { grid-area: auto; }
-  .tile-reveal-tile { transform: rotateY(180deg); margin-inline: auto; }
+  .tile-reveal-tile { transform: none; }
   .trt-word { opacity: 1; transform: none; }
 }

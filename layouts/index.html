@@ -1,6 +1,9 @@
 {{ define "main" }}
 <section class="hero">
   <div class="wrap hero-wrap">
+    <div class="hero-stage">
+      {{ partial "logo-animation.html" . }}
+    </div>
     <div class="hero-copy">
       <p class="hero-kicker"><span class="hero-kicker-zh" lang="zh-Hant">麻雀</span> · a field guide to the family table</p>
       <h1 class="hero-title">Lee&nbsp;TaiTai’s <em>House&nbsp;Rules</em></h1>
@@ -15,9 +18,6 @@
         <a class="btn btn-primary" href="{{ (site.GetPage "/learn").RelPermalink }}">Start from zero</a>
         <a class="btn btn-ghost" href="{{ (site.GetPage "/learn/house-rules").RelPermalink }}">I know mahjong — show me the house rules</a>
       </div>
-    </div>
-    <div class="hero-tiles">
-      {{ partial "logo-animation.html" . }}
     </div>
   </div>
 </section>

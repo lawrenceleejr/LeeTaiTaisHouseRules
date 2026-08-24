@@ -37,9 +37,11 @@
     <div class="la-lockup">
       <div class="la-row">
         {{- range $trio }}
-        <div class="la-tile" style="--row:{{ .row }};--fx:{{ .fx }};--fr:{{ .fr }};--sx:{{ .sx }};--sr:{{ .sr }};animation-delay:{{ .delay }}">
-          <span class="la-face la-back"></span>
-          <span class="la-face la-front" lang="zh-Hant">{{ .zh }}</span>
+        <div class="la-tile" style="--row:{{ .row }};--fx:{{ .fx }};--fr:{{ .fr }};--sx:{{ .sx }};--sr:{{ .sr }};--d:{{ .delay }}">
+          <div class="la-flip">
+            <span class="la-face la-back"></span>
+            <span class="la-face la-front" lang="zh-Hant">{{ .zh }}</span>
+          </div>
         </div>
         {{- end }}
       </div>
