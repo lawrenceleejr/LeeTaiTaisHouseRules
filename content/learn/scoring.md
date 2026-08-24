@@ -8,8 +8,8 @@ Deep breath. Mahjong scoring looks like folklore because it *is* folklore —
 every family seasons it differently. Ours is written down, and this chapter
 is a faithful transcription with commentary. The skeleton:
 
-1. Count the winning hand's **points** ({{< zh "番" "faan" "doubles" >}} if
-   you're feeling ancestral) — earned for how fancy the hand is.
+1. Count the winning hand's **points** — {{< zh "番" "faan" "doubles" >}} if
+   you're feeling ancestral — earned for how fancy the hand is.
 2. Convert points to a payout by **doubling**: every point doubles the money.
 3. Collect from **everyone** — with double from whoever earned it.
 
@@ -72,7 +72,7 @@ the right to retell it at every family gathering until the sun burns out.
 {{< /houserule >}}
 
 {{< houserule title="Chicken hands & the point minimum" >}}
-A 0-point win is a **chicken** ({{< zh "雞糊" "gai wu" >}}) and it's legal by
+A 0-point win is a **chicken**, {{< zh "雞糊" "gai wu" >}}, and it's legal by
 default — it simply pays the base stake. A **point minimum may be applied**:
 agree on it before the first deal, not after your cousin wins with garbage.
 {{< /houserule >}}
@@ -129,7 +129,7 @@ your dignity: firmly, and until the hand is over.
 
 ## The dealer
 
-The dealer ({{< zh "莊" "zong" >}}) who wins **keeps the deal** —
+The dealer, {{< zh "莊" "zong" >}}, who wins **keeps the deal** —
 {{< zh "連莊" "lin zong" "consecutive dealership" >}} — and the other three
 players begin openly conspiring like it's a period drama. This is correct,
 traditional, and the closest thing the game has to a boss fight.
@@ -137,8 +137,8 @@ traditional, and the closest thing the game has to a boss fight.
 ## When nobody wins
 
 The **last 14 tiles of the wall are dead** — nobody draws them. If the live
-wall runs out with no winner, the hand is a wash
-({{< zh "流局" "lau guk" >}}): no payments, same dealer re-deals, and
+wall runs out with no winner, the hand is a wash,
+{{< zh "流局" "lau guk" >}}: no payments, same dealer re-deals, and
 everyone agrees the *next* hand is "the real one." All 17 previous hands
 were also the real one. Nobody examines this.
 

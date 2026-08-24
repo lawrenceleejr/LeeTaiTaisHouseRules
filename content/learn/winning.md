@@ -1,5 +1,5 @@
 ---
-title: "Winning (and Declaring It)"
+title: "Winning, and Declaring It"
 description: "Ting, sik wu, Zi-Mo: the states of grace. Plus the waits you'll live in, the false win that lives in infamy, and the famous hands that break the rules."
 weight: 5
 ---
@@ -14,9 +14,9 @@ When your hand is one tile away from complete, you are **ting**
 one hole in the picture, every draw and every discard at the table suddenly
 personal.
 
-Etiquette note: you don't announce ting in Hong Kong style. You just… get
-quiet. Suspiciously quiet. Everyone notices. Nobody says anything. The
-tension is the entertainment.
+Etiquette note: you don't announce ting here. You just… get quiet.
+Suspiciously quiet. Everyone notices. Nobody says anything. The tension is
+the entertainment.
 
 ## Know your waits
 
@@ -72,9 +72,9 @@ appropriately:
 ## The audit
 
 When you declare, your hand goes face-up and the table checks it: four legs,
-two eyes, and — if the table declared a **point minimum** before dealing
-(see [Chapter 6]({{< relref "scoring" >}})) — enough points to clear it.
-Only then does money move.
+two eyes, and — if the table declared a **point minimum** before dealing —
+enough points to clear it. [Chapter 6]({{< relref "scoring" >}}) has the
+details. Only then does money move.
 
 Declare a win you don't have and you've committed
 {{< zh "詐糊" "zaa wu" "false win" >}} — the deepest shame available at a
@@ -92,13 +92,13 @@ find this keeps declarations conservative.
 A few celebrity hands ignore the four-legs-two-eyes silhouette — all of them
 legal here, all of them worth interrupting dinner to describe:
 
-**Seven pairs** ({{< zh "七對子" "chat deui zi" >}}): exactly what it sounds
+**Seven pairs**, {{< zh "七對子" "chat deui zi" >}}: exactly what it sounds
 like — seven pairs, no legs at all, fully concealed by nature. Worth **4
 points** and a warm feeling of having gamed the system.
 
 {{< hand tiles="d2 d2 b5 b5 b9 b9 c1 c1 we we dg dg dr | dr*" size="sm" caption="Seven pairs, waiting on the second red dragon. Fourteen tiles of pure hoarding behavior, finally rewarded." >}}
 
-**Thirteen orphans** ({{< zh "十三幺" "sap saam jiu" >}}): one of every
+**Thirteen orphans**, {{< zh "十三幺" "sap saam jiu" >}}: one of every
 terminal and honor — 1 and 9 of each suit, all four winds, all three dragons
 — plus a second copy of any one of them. Fourteen loners forming a hand that
 shouldn't work and instead scores the **cap: 6 points, Spicy**. Attempting

@@ -12,10 +12,10 @@ Everything else — the clacking, the slang, the psychological warfare, the
 auntie who claims she "never has good tiles" while winning four hands in a row
 — is garnish.
 
-This site teaches **Hong Kong style** (13-tile) mahjong, because that's what
-the Lee table plays and because it has the best ratio of drama to rules. If
-you learned American mah-jongg — we love that for you, but leave it at the
-door. There are no jokers here. This isn't canasta.
+This site teaches the **13-tile** game exactly as the Lee table plays it —
+the version with the best ratio of drama to rules. If you learned American
+mah-jongg, we love that for you, but leave it at the door. There are no
+jokers here. This isn't canasta.
 
 ## The whole game in one sentence
 
@@ -30,8 +30,8 @@ remember it you can never truly be lost:
   tiles — the {{< zh "眼" "ngaan" "eyes" >}}. Two matching tiles, watching
   over your hand like a chaperone at a school dance.
 - **Three suits.** The bulk of the tiles come in three suits — dots, bamboo,
-  and characters — numbered 1 through 9. (Plus some honor tiles we'll meet in
-  the next chapter. They're the drama department.)
+  and characters — numbered 1 through 9. Plus some honor tiles we'll meet in
+  the next chapter. They're the drama department.
 - **Four legs.** The rest of the hand is four **sets** of three — the
   {{< zh "腳" "goek" "legs" >}} your hand stands on. Each leg is either a
   run of three in one suit, or three of a kind.
@@ -74,7 +74,7 @@ and our brilliance when we win.
 ## How a session actually flows
 
 1. **Everyone gets a seat and a wind.** East, south, west, north. East is the
-   dealer and the main character (for now).
+   dealer and, for now, the main character.
 2. **The tiles get washed** — shuffled face-down with maximum noise — and
    built into four walls. Yes, you help. Yes, even you.
 3. **Everyone gets 13 tiles.** The dealer briefly has 14 and starts the game
@@ -87,9 +87,9 @@ and our brilliance when we win.
 6. **Someone wins** by completing four legs and two eyes — or nobody does and
    the wall runs out, which is called a draw and feels like a group project
    where everyone got a B-minus.
-7. **Money changes hands** (Chapter 6), the deal rotates, and you go again
-   until the agreed end — traditionally four full rounds, realistically "when
-   the first parent has to leave."
+7. **Money changes hands**, the deal rotates, and you go again until the
+   agreed end — traditionally four full rounds, realistically "when the first
+   parent has to leave."
 
 {{< houserule >}}
 At the Lee table, a "quick game" is a minimum of eight hands and you know it.
@@ -99,8 +99,8 @@ player, that's a rumor.
 
 ## Your vocabulary starter pack
 
-You'll pick up the full lingo as we go (there's a whole
-[glossary]({{< relref "/glossary" >}})), but you can't sit down without these
+You'll pick up the full lingo as we go — there's a whole
+[glossary]({{< relref "/glossary" >}}) — but you can't sit down without these
 four:
 
 | Say | Sounds like | It means |

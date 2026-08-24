@@ -38,15 +38,15 @@ sections:
       - han: 門前清
         rom: mun cin cing
         lit: "clean in front of the door"
-        def: "A hand built with zero claims — fully concealed. On the family card the cash arrives via the silent fortress (four concealed Pongs + Zi-Mo, 6 points); the smugness arrives free."
+        def: "A hand built with zero claims — fully concealed. The cash arrives via the silent fortress: four concealed Pongs plus a Zi-Mo, 6 points. The smugness arrives free."
       - han: 莊
         rom: zong
         lit: "the banker"
-        def: "The dealer. Wins bigger, loses bigger, and at this table, keeps the deal by winning (連莊 lin zong)."
+        def: "The dealer. Wins bigger, loses bigger, and at this table, keeps the deal by winning — 連莊 lin zong."
       - han: 上家 / 下家
         rom: seung gaa / haa gaa
         lit: "upper house / lower house"
-        def: "Your left neighbor (whose discards you can seung) and your right neighbor (who can seung yours). Choose your enemies accordingly."
+        def: "Your left neighbor, whose discards you can seung, and your right neighbor, who can seung yours. Choose your enemies accordingly."
       - han: 三缺一
         rom: saam kyut yat
         lit: "three lacking one"
@@ -104,7 +104,7 @@ sections:
       - han: 詐糊
         rom: zaa wu
         lit: "fraudulent win"
-        def: "Declaring a win you don't have. Pays the table maximum and renames you 'Professor' until further notice."
+        def: "Declaring a win you don't have. You pay all three players the table maximum, and nobody forgets it."
       - han: 截糊
         rom: zit wu
         lit: "intercepted win"
@@ -112,7 +112,7 @@ sections:
       - han: 海底撈月
         rom: hoi dai laau jyut
         lit: "scoop the moon from the sea"
-        def: "Winning on the very last live tile of the wall. No points on the family card — just instant legend status and the name of somebody's future boba shop."
+        def: "Winning on the very last live tile of the wall. No extra points — just instant legend status and the name of somebody's future boba shop."
   - title: "Table talk & vibes"
     entries:
       - han: 太太

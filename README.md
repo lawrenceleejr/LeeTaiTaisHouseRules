@@ -2,9 +2,8 @@
 
 *One game. Two eyes. Three suits. Four legs.*
 
-A polished, playful explainer site for Hong Kong–style mahjong as played at
-the Lee family table — tiles, turns, winning, the point system, and the
-house rules (transcribed from the official laminated rule card), with a
+A polished, playful explainer site for mahjong as played at the Lee family
+table — tiles, turns, winning, the point system, and the house rules, with a
 glossary and a printable cheat sheet.
 
 **Live site:** https://lawrenceleejr.github.io/LeeTaiTaisHouseRules/

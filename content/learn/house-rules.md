@@ -82,8 +82,8 @@ law — arguably more.
 ## Frequently argued questions
 
 **Can we play with jokers?**
-No. This isn't canasta, and it isn't the league card. We're delighted your
-office plays American mah-jongg; this table predates HR.
+No. This isn't canasta. We're delighted your office plays American
+mah-jongg; this table predates HR.
 
 **What do we play for?**
 Default: **a penny a chicken.** Before the first deal, the table can discuss
