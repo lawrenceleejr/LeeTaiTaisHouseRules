@@ -24,8 +24,8 @@ carry on. Flowers never count as your draw.
 ## The three calls
 
 When *someone else* discards a tile you want, you can claim it. This is
-legal theft, and it's the part of mahjong that makes it a contact sport. Two
-of the three calls need a word out loud; the third you just take.
+legal theft, and it's the part of mahjong that makes it a contact sport.
+Pong and gong you call out loud; seung you just take.
 
 ### 上 Seung — take it for a run
 
@@ -39,8 +39,8 @@ arbitrate against. Runs are local commerce.
 ### 碰 Pong — take it for a triplet
 
 If **anyone** at the table discards a tile and you're holding a pair of it,
-call **pong**, take the tile, and expose the triplet. This is one of only
-two words you ever have to say to claim a tile — the other is your win.
+call **pong**, take the tile, and expose the triplet. Say it out loud —
+you're claiming off the whole table, so the whole table needs to hear it.
 Pong beats seung: if one player wants it for a run and another wants it for
 a triplet, the triplet wins, and the run-caller gets to practice emotional
 regulation.
@@ -56,13 +56,14 @@ constantly.
 
 ### 槓 Gong — take it for a kong
 
-Four of a kind. Three flavors, all of which end with you drawing a
-**replacement tile from the tail of the wall.** A kong is four tiles
-standing in a three-tile parking spot, so you get a tile back — and with it,
-a fresh chance to win on the replacement:
+Four of a kind, and you call **gong** out loud to claim it, exactly like a
+pong. Three flavors, all of which end with you drawing a **replacement tile
+from the tail of the wall.** A kong is four tiles standing in a three-tile
+parking spot, so you get a tile back — and with it, a fresh chance to win on
+the replacement:
 
 - **Open kong:** you hold a concealed triplet, someone discards the fourth.
-  Take it, no call needed, and expose all four.
+  Call gong and expose all four.
 - **Added kong:** you already have an exposed pong and *draw* the fourth
   yourself. Tack it on.
 - **Concealed kong:** all four in your own hand from your own draws. Lay it
@@ -113,9 +114,9 @@ be when it grows up?
   *clack, clack, clack.* Nobody expects you to speed-run your first night,
   but chronic deliberating over every discard is how you earn a nickname you
   won't like.
-- **Claims must be immediate.** The window for pong closes when the next
-  player's discard hits the felt. "Wait, actually—" is not a call. The tile
-  is dead to you. Light incense.
+- **Claims must be immediate.** The window for pong or gong closes when the
+  next player's discard hits the felt. "Wait, actually—" is not a call. The
+  tile is dead to you. Light incense.
 - **Touch the wall only on your turn.** The wall is load-bearing,
   structurally and spiritually.
 
