@@ -1403,212 +1403,303 @@ h4 {
 }
 
 /* ============================================================
-   Hero logo animation — five-scene loop, pure CSS
-   Shuffle 1.9s · Stack 0.8s · Reveal 2.1s · Hold 4s · Scatter 1.1s
-   Percentages below are that 9.9s timeline:
-   19.19% ends shuffle · 27.27% ends stack · 48.48% ends reveal · 88.89% ends hold
+   Hero logo animation — ported from the Claude Design handoff.
+   The 1920x1080 composition is scaled to fit by JS; every number below is
+   in that composition's coordinate space. See assets/js/logo-animation.js.
    ============================================================ */
 .logo-anim {
-  --loop: 9.9s;
-  --tw: clamp(3.4rem, 6.8vw, 6.1rem);
-  /* how far the churn fans out horizontally — wider stages spread more */
-  --kx: 2.1;
-  --ky: 1;
-  --th: calc(var(--tw) * 1.375);
   --felt: #123f2e;
   --felt-deep: #0c2a1f;
   --accent: #c33528;
+  --ink: #16120e;
+  --bone: #fbfaf4;
+  --bone-100: #f5eedd;
+  --bone-200: #ebe0c8;
+  --bone-300: #d8c9ab;
+  --bone-400: #bfac8b;
   --brass: #c4922c;
+  --brass-3: #e0bb69;
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 5.9;
-  border-radius: 1.5rem;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 1.5rem;
   background:
-    radial-gradient(120% 90% at 50% 18%, rgba(255, 255, 255, 0.09), transparent 62%),
-    linear-gradient(168deg, var(--felt) 0%, var(--felt-deep) 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(196, 146, 44, 0.28),
-    inset 0 2px 40px rgba(0, 0, 0, 0.42),
-    var(--shadow);
+    radial-gradient(120% 90% at 50% 34%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 55%),
+    radial-gradient(130% 110% at 50% 60%, transparent 40%, var(--felt-deep) 100%),
+    var(--felt);
+  box-shadow: inset 0 0 0 1px rgba(196, 146, 44, 0.28), var(--shadow);
 }
 
-.logo-anim-stage {
+/* woven felt */
+.logo-anim::before {
+  content: '';
   position: absolute;
   inset: 0;
-  perspective: 1000px;
+  opacity: 0.45;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 4px);
 }
 
-/* face-down tile chrome, shared by the churn crowd and the trio's backs */
-.la-churn,
-.la-back {
-  background: linear-gradient(150deg, #38a077 0%, #24785a 52%, #1a5f47 100%);
-  box-shadow:
-    inset 0 0 0 1.5px rgba(255, 255, 255, 0.22),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.28),
-    0 4px 10px -3px rgba(0, 0, 0, 0.5);
-}
-
-.la-churn {
-  position: absolute;
-  width: var(--tw);
-  height: var(--th);
-  border-radius: calc(var(--tw) * 0.14);
-  left: 50%;
-  top: 50%;
-  margin-left: calc(var(--tw) / -2);
-  margin-top: calc(var(--th) / -2);
-  transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar));
-  animation: la-churn var(--loop) cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-
-@keyframes la-churn {
-  0% { transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar)); opacity: 1; }
-  7% { transform: translate(calc(var(--bx) * var(--kx)), calc(var(--by) * var(--ky))) rotate(var(--br)); opacity: 1; }
-  14% { transform: translate(calc(var(--cx) * var(--kx)), calc(var(--cy) * var(--ky))) rotate(var(--cr)); opacity: 1; }
-  19.19% { transform: translate(calc(var(--bx) * var(--kx)), calc(var(--by) * var(--ky))) rotate(var(--br)); opacity: 1; }
-  27.27% { transform: translate(calc(var(--ox) * var(--kx)), calc(var(--oy) * var(--ky))) rotate(var(--or)); opacity: 0; }
-  88.89% { transform: translate(calc(var(--ox) * var(--kx)), calc(var(--oy) * var(--ky))) rotate(var(--or)); opacity: 0; }
-  100% { transform: translate(calc(var(--ax) * var(--kx)), calc(var(--ay) * var(--ky))) rotate(var(--ar)); opacity: 1; }
-}
-
-/* the lockup: three tiles + wordmark, breathing gently through the hold */
-.la-lockup {
+/* ---- static lockup: shown before the sim is ready, and without JS ---- */
+.la-fallback {
   position: absolute;
   inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2%;
+}
+
+.logo-anim.is-live .la-fallback { display: none; }
+
+.la-fb-row {
+  display: flex;
+  gap: 1.4%;
+}
+
+.la-fb-tile {
   display: grid;
-  place-content: center;
-  gap: calc(var(--tw) * 0.38);
-  animation: la-breathe 3.4s ease-in-out infinite alternate;
+  place-items: center;
+  width: clamp(2.6rem, 6.4vw, 6rem);
+  aspect-ratio: 196 / 262;
+  border-radius: 0.5rem;
+  background: linear-gradient(158deg, #fffefa 0%, var(--bone) 52%, var(--bone-100) 100%);
+  box-shadow:
+    inset 0 2px 0 #fff,
+    inset 0 -3px 0 rgba(22, 18, 14, 0.1),
+    0 0.5rem 1rem -0.3rem rgba(4, 18, 13, 0.5);
+  font-family: var(--font-zh);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.8vw, 3.6rem);
+  color: var(--ink);
 }
 
-@keyframes la-breathe {
-  from { transform: scale(1); }
-  to { transform: scale(1.022); }
+.la-fb-hero { color: var(--accent); }
+
+.la-fb-kicker,
+.la-fb-sign { margin: 0; text-align: center; line-height: 1; }
+
+.la-fb-kicker {
+  font-family: 'Archivo Narrow', var(--font-body), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: clamp(0.6rem, 1.2vw, 1.05rem);
+  color: var(--brass-3);
 }
 
-.la-row {
-  position: relative;
-  width: calc(var(--tw) * 3.6);
-  height: var(--th);
-  perspective: 800px;
+.la-fb-sign {
+  font-family: 'Alfa Slab One', var(--font-display), serif;
+  font-size: clamp(1.5rem, 4.4vw, 4rem);
+  color: var(--bone);
+  text-transform: uppercase;
 }
 
-/* outer layer moves and fades — kept off the flip so opacity never
-   flattens the 3D context and unhides the backface */
+/* ---- the live composition ---- */
+.la-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+.la-table {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 46%;
+}
+
+/* the table is a plane tilted away from the camera */
+.la-plane {
+  position: absolute;
+  inset: 0;
+  perspective: 1700px;
+  perspective-origin: 50% 40%;
+  transform-style: preserve-3d;
+}
+
 .la-tile {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: var(--tw);
-  height: var(--th);
-  margin-left: calc(var(--tw) / -2);
-  margin-top: calc(var(--th) / -2);
-  transform: translate(calc(var(--fx) * var(--kx)), -150%) rotate(var(--fr));
-  opacity: 0;
-  animation: la-tile var(--loop) cubic-bezier(0.2, 0.9, 0.25, 1) infinite;
-  animation-delay: var(--d);
+  left: 0;
+  top: 0;
+  width: 196px;
+  height: 262px;
+  will-change: transform;
 }
 
-/* inner layer only ever rotates, so preserve-3d stays intact */
-.la-flip {
+/* the plate silhouette, swept down the screen — this is the tile's thickness */
+.la-shadow,
+.la-ext,
+.la-plate {
   position: absolute;
   inset: 0;
-  transform-style: preserve-3d;
-  animation: la-flip var(--loop) cubic-bezier(0.2, 0.9, 0.25, 1) infinite;
-  animation-delay: var(--d);
+  transform-origin: 50% 50%;
+  transform: translateY(var(--ty, 0)) var(--plate, none);
+}
+
+.la-shadow {
+  border-radius: 18px;
+  background: rgba(4, 18, 13, 0.5);
+}
+
+.la-ext {
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--bone-300), var(--bone-400));
+}
+
+.la-ext-deep { background: #98866a; }
+
+.la-back,
+.la-face,
+.la-edgeband,
+.la-shadeband {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.la-back {
+  background: linear-gradient(158deg, #2a7c61 0%, #1d6a51 48%, #175442 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -3px 0 rgba(4, 20, 14, 0.35),
+    inset 3px 0 0 rgba(255, 255, 255, 0.16),
+    inset -3px 0 0 rgba(4, 20, 14, 0.22);
+}
+
+.la-back::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 8px;
+  border: 2px solid rgba(251, 250, 244, 0.18);
 }
 
 .la-face {
-  position: absolute;
-  inset: 0;
-  border-radius: calc(var(--tw) * 0.14);
-  backface-visibility: hidden;
-}
-
-.la-front {
-  background: linear-gradient(168deg, #fffdf2 0%, #f6efdc 100%);
-  transform: rotateY(180deg);
   display: grid;
   place-items: center;
-  font-family: var(--font-zh);
-  font-weight: 600;
-  font-size: calc(var(--tw) * 0.62);
-  color: var(--accent);
+  background: linear-gradient(158deg, #fffefa 0%, var(--bone) 52%, var(--bone-100) 100%);
   box-shadow:
-    inset 0 0 0 1.5px rgba(196, 146, 44, 0.4),
-    inset 0 -4px 7px rgba(120, 96, 40, 0.18),
-    0 5px 12px -3px rgba(0, 0, 0, 0.45);
+    inset 0 2px 0 #fff,
+    inset 0 -3px 0 rgba(22, 18, 14, 0.1),
+    inset 3px 0 0 rgba(255, 255, 255, 0.7),
+    inset -3px 0 0 rgba(22, 18, 14, 0.07);
 }
 
-@keyframes la-tile {
-  /* shuffle: waiting offstage */
-  0%, 19.19% { transform: translate(calc(var(--fx) * var(--kx)), -150%) rotate(var(--fr)); opacity: 0; }
-  /* stack: drop into the row, face-down */
-  23% { opacity: 1; }
-  27.27% { transform: translate(var(--row), 0) rotate(0deg) scale(1); opacity: 1; }
-  /* reveal: lift, turn over mid-air, slam down */
-  32% { transform: translate(var(--row), -26%) scale(1.07); opacity: 1; }
-  39% { transform: translate(var(--row), -30%) scale(1.07); opacity: 1; }
-  43% { transform: translate(var(--row), 0) scale(1); opacity: 1; }
-  45% { transform: translate(var(--row), 0) scale(1.05, 0.95); opacity: 1; }
-  /* hold */
-  48.48%, 88.89% { transform: translate(var(--row), 0) scale(1); opacity: 1; }
-  /* scatter: swept off the felt */
-  100% { transform: translate(calc(var(--sx) * var(--kx)), 140%) rotate(var(--sr)); opacity: 0; }
+.la-face::after {
+  content: '';
+  position: absolute;
+  inset: 11px;
+  border-radius: 9px;
+  border: 2px solid rgba(22, 18, 14, 0.11);
 }
 
-@keyframes la-flip {
-  0%, 32% { transform: rotateY(0deg); }
-  39%, 100% { transform: rotateY(180deg); }
+.la-face-hero::after { border-color: rgba(195, 53, 40, 0.2); }
+
+.la-pip {
+  position: absolute;
+  left: 19px;
+  top: 17px;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background: var(--brass-3);
+  opacity: 0.65;
 }
 
+.la-face-hero .la-pip {
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+/* 太太 sit in ink; only 李 carries the accent */
+.la-glyph {
+  font-family: var(--font-zh);
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 1;
+  color: var(--ink);
+  transform: translateY(7px);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 1px rgba(22, 18, 14, 0.22);
+}
+
+.la-face-hero .la-glyph {
+  font-size: 164px;
+  color: var(--accent);
+}
+
+/* the bone edge you see as a tile turns through its own plane */
+.la-edgeband {
+  background: linear-gradient(90deg, var(--bone-200), var(--bone) 35%, var(--bone-300) 100%);
+  box-shadow: inset 0 2px 0 #fff, inset 0 -4px 0 rgba(22, 18, 14, 0.22);
+}
+
+.la-shadeband { background: rgba(8, 32, 23, 0.9); }
+
+/* ---- wordmark ---- */
 .la-wordmark {
-  margin: 0;
-  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.la-kicker-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 16px;
+}
+
+.la-rule { height: 2px; }
+.la-rule-l { background: linear-gradient(90deg, transparent, var(--brass)); }
+.la-rule-r { background: linear-gradient(270deg, transparent, var(--brass)); }
+
+.la-kicker,
+.la-sign {
+  display: flex;
+  justify-content: center;
+}
+
+.la-mask {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.la-letter {
+  display: inline-block;
+  line-height: 1.02;
+}
+
+.la-kicker .la-mask { padding-right: 9px; }
+.la-kicker .la-letter {
+  font-family: 'Archivo Narrow', var(--font-body), sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--brass-3);
+}
+
+.la-sign .la-mask { padding-right: 2px; }
+.la-sign .la-letter {
   font-family: 'Alfa Slab One', var(--font-display), serif;
   font-weight: 400;
-  font-size: calc(var(--tw) * 0.5);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #f7efdc;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  animation: la-wordmark var(--loop) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  font-size: 128px;
+  color: var(--bone);
 }
 
-.la-wordmark span {
-  display: inline-block;
-}
-
-.la-wordmark span + span {
-  color: var(--brass);
-}
-
-@keyframes la-wordmark {
-  0%, 43% { opacity: 0; transform: translateY(90%); }
-  48.48%, 88.89% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(70%); }
-}
+.la-space { display: inline-block; }
+.la-kicker .la-space { width: 10px; }
+.la-sign .la-space { width: 38px; }
 
 @media (max-width: 860px) {
-  .logo-anim {
-    aspect-ratio: 4 / 3;
-    --kx: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .la-churn { animation: none; opacity: 0; }
-  .la-lockup { animation: none; }
-  .la-tile {
-    animation: none;
-    opacity: 1;
-    transform: translate(var(--row), 0);
-  }
-  .la-flip { animation: none; transform: rotateY(180deg); }
-  .la-wordmark { animation: none; opacity: 1; transform: none; }
+  .logo-anim { aspect-ratio: 4 / 3; }
 }
 
 /* ============================================================
@@ -1618,7 +1709,7 @@ h4 {
    ============================================================ */
 .tile-reveal {
   --p: 1;
-  --gw: clamp(9rem, 26vw, 16rem);
+  --gw: clamp(8rem, 22vw, 14rem);
   --gh: calc(var(--gw) * 1.375);
   position: relative;
   background:
@@ -1649,7 +1740,7 @@ h4 {
   flex: none;
   width: var(--gw);
   height: var(--gh);
-  --d: calc(var(--gw) * 0.18);
+  --d: calc(var(--gw) * 0.76);
   transform-style: preserve-3d;
   /* wobble damps to nothing so the tumble settles dead-on at the end */
   --damp: calc(1 - var(--p));
