@@ -12,7 +12,7 @@ sections:
       - han: 槓
         rom: gong
         lit: "kong"
-        def: "Four of a kind — open, added, or concealed. Comes with a bonus replacement draw from the tail of the wall."
+        def: "Four of a kind — open, added, or concealed. Called out loud like a pong, and it comes with a bonus replacement draw from the tail of the wall."
       - han: 食糊
         rom: sik wu
         lit: "eat the win"

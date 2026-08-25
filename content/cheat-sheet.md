@@ -20,14 +20,14 @@ triplets/kongs. Eyes are one pair. You hold 13; the 14th wins it.
 
 ## The calls
 
-Only two calls need a word out loud — pong and a win. Seung and gong you
-just take.
+Pong, gong and a win are called out loud. Seung you just take — it can only
+come from your left neighbor, so there's nothing to arbitrate.
 
 | Call | Say it? | Claims | From | Beats |
 |---|---|---|---|---|
 | Run — seung 上 | No, just take it | discard completing a run | left neighbor only | — |
 | Triplet — pong 碰 | **"pong"** | discard completing a triplet | anyone | seung |
-| Kong — gong 槓 | No, just take it | 4th copy of your triplet | anyone, or self-drawn | seung |
+| Kong — gong 槓 | **"gong"** | 4th copy of your triplet | anyone, or self-drawn | seung |
 | Win — sik wu 食糊 | **"sik wu"** | your winning tile | anyone | everything |
 
 Claim window closes when the next discard lands. No appeals.
