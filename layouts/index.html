@@ -22,7 +22,10 @@
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
+{{/* the clipper has no transform of its own, so the tilted bar inside it
+     can't widen the page — see .marquee-clip */}}
+<div class="marquee-clip" aria-hidden="true">
+<div class="marquee">
   <div class="marquee-track">
     {{- $phrases := slice
       (dict "han" "洗牌" "rom" "sai paai" "en" "wash the tiles, loudly")
@@ -44,6 +47,7 @@
     </span>
     {{- end }}
   </div>
+</div>
 </div>
 
 <section class="chapters">
