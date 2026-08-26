@@ -318,8 +318,15 @@
   stage.appendChild(table);
 
   // ---------- fit the 1920×1080 composition to the container ----------
+  // Cover, not contain: scaling on width alone left a band of dead felt below
+  // the lockup on tall/narrow panels. Overflow on the long axis is clipped by
+  // .logo-anim, and the composition is centred so the lockup never drifts.
   function fit() {
-    stage.style.transform = 'scale(' + (root.clientWidth / W) + ')';
+    var cw = root.clientWidth, chh = root.clientHeight;
+    if (!cw || !chh) return;
+    var s = Math.max(cw / W, chh / H);
+    stage.style.transform = 'translate(' + ((cw - W * s) / 2) + 'px,'
+      + ((chh - H * s) / 2) + 'px) scale(' + s + ')';
   }
   if (window.ResizeObserver) new ResizeObserver(fit).observe(root);
   else window.addEventListener('resize', fit);

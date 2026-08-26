@@ -1,20 +1,46 @@
 {{- /*
-  Scroll-driven outro: a giant face-down tile floats up through a sticky stage,
+  Scroll-driven outro: a giant mahjong tile tumbles up through a sticky stage,
   turns over to reveal the red dragon, and the site's four-beat subtitle lands
-  one phrase at a time behind it. Progress comes from main.js as --p (0 → 1);
-  with no JS, or with reduced motion, the finished state renders statically.
+  one phrase at a time. Progress comes from main.js as --p (0 → 1); with no JS,
+  or with reduced motion, the finished state renders statically.
+
+  The tile is a solid of revolution rather than a six-sided box: a stack of
+  rounded-rect slices along Z whose inset follows a circular fillet at each
+  end, so the corners roll over in 3D instead of three flat faces meeting with
+  their own separate radii. Four flat walls sit inside the corner radius to
+  keep the body opaque edge-on. Slice geometry is generated — see the commit.
 */ -}}
 <section class="tile-reveal" id="tile-reveal">
   <div class="tile-reveal-track">
     <div class="tile-reveal-stage">
-      {{- /* six faces: a real cuboid, so the bone-coloured edges show as it tumbles */}}
       <div class="tile-reveal-tile" aria-hidden="true">
-        <span class="trt-face trt-front" lang="zh-Hant">中</span>
+        <span class="trt-slice trt-green" style="--in:0.04849;--z:-0.36571"></span>
+        <span class="trt-slice trt-green" style="--in:0.03001;--z:-0.35143"></span>
+        <span class="trt-slice trt-green" style="--in:0.01793;--z:-0.33714"></span>
+        <span class="trt-slice trt-green" style="--in:0.00965;--z:-0.32286"></span>
+        <span class="trt-slice trt-green" style="--in:0.00417;--z:-0.30857"></span>
+        <span class="trt-slice trt-green" style="--in:0.00103;--z:-0.29429"></span>
+        <span class="trt-slice trt-green" style="--in:0.00000;--z:-0.28000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:-0.21000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:-0.14000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:-0.07000"></span>
+        <span class="trt-slice trt-core" style="--in:0.00000;--z:0.00000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:0.07000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:0.14000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:0.21000"></span>
+        <span class="trt-slice" style="--in:0.00000;--z:0.28000"></span>
+        <span class="trt-slice" style="--in:0.00103;--z:0.29429"></span>
+        <span class="trt-slice" style="--in:0.00417;--z:0.30857"></span>
+        <span class="trt-slice" style="--in:0.00965;--z:0.32286"></span>
+        <span class="trt-slice" style="--in:0.01793;--z:0.33714"></span>
+        <span class="trt-slice" style="--in:0.03001;--z:0.35143"></span>
+        <span class="trt-slice" style="--in:0.04849;--z:0.36571"></span>
+        <span class="trt-wall trt-wl"></span>
+        <span class="trt-wall trt-wr"></span>
+        <span class="trt-wall trt-wt"></span>
+        <span class="trt-wall trt-wb"></span>
         <span class="trt-face trt-back"></span>
-        <span class="trt-face trt-edge trt-l"></span>
-        <span class="trt-face trt-edge trt-r"></span>
-        <span class="trt-face trt-edge trt-t"></span>
-        <span class="trt-face trt-edge trt-b"></span>
+        <span class="trt-face trt-front" lang="zh-Hant">中</span>
       </div>
       <p class="tile-reveal-text">
         <span class="trt-word">One game.</span>
