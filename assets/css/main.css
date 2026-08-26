@@ -1755,129 +1755,45 @@ h4 {
   perspective: 1200px;
 }
 
+/* the tile's layout footprint; the canvas overdraws it so the solid can
+   dolly toward the camera without disturbing the flow */
 .tile-reveal-tile {
   position: relative;
   flex: none;
   width: var(--gw);
   height: var(--gh);
-  --d: calc(var(--gw) * 0.76);
-  --bev: calc(var(--gw) * 0.1);
-  transform-style: preserve-3d;
-  /* wobble damps to nothing so the tumble settles dead-on at the end */
-  --damp: calc(1 - var(--p));
-  /* dolly through Z as well as spinning: far and small, then right up close */
-  --dolly: calc(-980px + var(--p) * 1040px);
-  /* plain fallback where trig functions are unsupported */
-  transform:
-    translateY(calc((1 - var(--p)) * 12vh))
-    translateZ(var(--dolly))
-    rotateY(calc(180deg + var(--p) * 540deg));
 }
 
-@supports (rotate: calc(sin(1) * 1deg)) {
-  .tile-reveal-tile {
-    transform:
-      translateY(calc((1 - var(--p)) * 12vh))
-      translateX(calc(sin(var(--p) * 540deg) * 5vw * var(--damp)))
-      translateZ(var(--dolly))
-      rotateY(calc(180deg + var(--p) * 540deg))
-      rotateX(calc(cos(var(--p) * 720deg) * 17deg * var(--damp)))
-      rotateZ(calc(sin(var(--p) * 900deg) * 15deg * var(--damp)));
-  }
-}
-
-/* Each slice is one rounded-rect cross-section. --in is its inset and --z its
-   depth, both as fractions of the tile width; the inset follows a circular
-   fillet near the ends, so the corners roll over in 3D rather than three flat
-   faces meeting at their own radii. */
-.trt-slice,
-.trt-face {
+.trt-canvas {
   position: absolute;
-  inset: calc(var(--gw) * var(--in, 0));
-  border-radius: calc(var(--gw) * (0.13 - var(--in, 0)));
-  transform: translateZ(calc(var(--gw) * var(--z, 0)));
-  background: linear-gradient(168deg, #fdf8e9 0%, #f0e5cd 55%, #dccdac 100%);
+  left: 50%;
+  top: 50%;
+  width: 190%;
+  height: 155%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
-/* one soft shadow on the mid-plane slice: putting it on every slice would
-   stack, and a filter would flatten the 3D context */
-.trt-core {
-  box-shadow: 0 40px 80px -28px rgba(62, 48, 18, 0.5);
-}
+.tile-reveal.is-live .trt-canvas { display: block; }
 
-/* the green backing plate, wrapping the back fifth of the depth */
-.trt-green {
-  background: linear-gradient(158deg, #2a7c61 0%, #1d6a51 48%, #175442 100%);
-}
-
-/* flat walls keep the body opaque edge-on; they sit inside the corner radius
-   so they can never poke past the rounded silhouette */
-.trt-wall {
+/* flat stand-in, retired once the renderer starts */
+.trt-fallback {
   position: absolute;
-  background: linear-gradient(180deg, #fdf8e9 0%, #ece0c4 55%, #d8c9a8 100%);
-}
-
-.trt-wl,
-.trt-wr {
-  width: calc(var(--d) - 2 * var(--bev));
-  height: calc(var(--gh) - var(--gw) * 0.26);
-  top: calc(var(--gw) * 0.13);
-  left: calc(50% - (var(--d) - 2 * var(--bev)) / 2);
-}
-
-.trt-wl {
-  transform: rotateY(-90deg) translateZ(calc(var(--gw) / 2));
-  background: linear-gradient(90deg, var(--edge-green) 0 9.3%, #fdf8e9 9.3%, #d8c9a8 100%);
-}
-
-.trt-wr {
-  transform: rotateY(90deg) translateZ(calc(var(--gw) / 2));
-  background: linear-gradient(270deg, var(--edge-green) 0 9.3%, #fdf8e9 9.3%, #d8c9a8 100%);
-}
-
-.trt-wt,
-.trt-wb {
-  width: calc(var(--gw) - var(--gw) * 0.26);
-  height: calc(var(--d) - 2 * var(--bev));
-  left: calc(var(--gw) * 0.13);
-  top: calc(50% - (var(--d) - 2 * var(--bev)) / 2);
-}
-
-.trt-wt {
-  transform: rotateX(90deg) translateZ(calc(var(--gh) / 2));
-  background: linear-gradient(180deg, var(--edge-green) 0 9.3%, #fdf8e9 9.3%, #d8c9a8 100%);
-}
-
-.trt-wb {
-  transform: rotateX(-90deg) translateZ(calc(var(--gh) / 2));
-  background: linear-gradient(0deg, var(--edge-green) 0 9.3%, #fdf8e9 9.3%, #d8c9a8 100%);
-}
-
-/* the two faces cap the fillet, inset by the bevel */
-.trt-front,
-.trt-back {
-  --in: 0.1;
-  backface-visibility: hidden;
-}
-
-.trt-front {
-  --z: 0.38;
-  background: linear-gradient(168deg, #fffdf2 0%, #f4ecd7 100%);
+  inset: 0;
   display: grid;
   place-items: center;
+  border-radius: calc(var(--gw) * 0.11);
+  background: linear-gradient(168deg, #fffdf4 0%, #f3e9d2 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(196, 146, 44, 0.42),
+    0 40px 80px -28px rgba(62, 48, 18, 0.5);
   font-family: var(--font-zh);
   font-weight: 600;
   font-size: calc(var(--gw) * 0.74);
   color: var(--mj-red);
-  box-shadow: inset 0 0 0 2px rgba(196, 146, 44, 0.42);
 }
 
-.trt-back {
-  --z: -0.38;
-  transform: translateZ(calc(var(--gw) * -0.38)) rotateY(180deg);
-  background: linear-gradient(150deg, #38a077 0%, #24785a 52%, #1a5f47 100%);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
-}
+.tile-reveal.is-live .trt-fallback { display: none; }
 
 .tile-reveal-text {
   margin: 0;
