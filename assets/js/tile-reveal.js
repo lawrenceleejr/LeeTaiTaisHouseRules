@@ -82,7 +82,7 @@
     return { faces: faces, front: front, back: back };
   }
 
-  var MESH = buildMesh(8, 9); // corner and roll-over segments
+  var MESH = buildMesh(14, 16); // corner and roll-over segments
 
   // ---------- the glyph, pre-rendered once and mapped onto the front cap ----------
   var faceTex = null;
@@ -157,7 +157,7 @@
   function resize() {
     var r = canvas.getBoundingClientRect();
     if (!r.width || !r.height) return false;
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dpr = Math.min(window.devicePixelRatio || 1, 1.75);
     if (Math.abs(r.width - cw) < 0.5 && Math.abs(r.height - chh) < 0.5) return true;
     cw = r.width; chh = r.height;
     canvas.width = Math.round(cw * dpr);
@@ -230,17 +230,22 @@
       var p0 = project(v0), p1 = project(v1), p2 = project(v2), p3 = project(v3);
       var lit = intensity(nz, nx * LIGHT[0] + ny * LIGHT[1] + nz * LIGHT[2]);
       var fill = shade(base, lit);
+      // inflate each quad half a pixel from its centroid so neighbours overlap
+      // and antialiasing can't open seams — half the cost of fill + stroke
+      var gx = (p0[0] + p1[0] + p2[0] + p3[0]) / 4;
+      var gy = (p0[1] + p1[1] + p2[1] + p3[1]) / 4;
       ctx.beginPath();
-      ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]);
-      ctx.lineTo(p2[0], p2[1]); ctx.lineTo(p3[0], p3[1]);
+      var pts = [p0, p1, p2, p3];
+      for (var t = 0; t < 4; t++) {
+        var vx2 = pts[t][0] - gx, vy2 = pts[t][1] - gy;
+        var vl = Math.hypot(vx2, vy2) || 1;
+        var qx = pts[t][0] + vx2 / vl * 0.5, qy = pts[t][1] + vy2 / vl * 0.5;
+        if (t === 0) ctx.moveTo(qx, qy); else ctx.lineTo(qx, qy);
+      }
       ctx.closePath();
       ctx.fillStyle = fill;
       ctx.fill();
-      // stroke the same colour to close antialiasing seams between facets
-      ctx.strokeStyle = fill;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      return { pts: [p0, p1, p2, p3], lit: lit };
+      return { pts: pts, lit: lit };
     }
 
     // soft contact shadow, drawn before the solid
@@ -265,7 +270,7 @@
 
     var cap = poly(MESH.front, BONE);
     if (cap && faceTex) {
-      var src = [[0, 0], [faceTex.width, 0], [faceTex.width, faceTex.height], [0, faceTex.height]];
+      var src = [[0, faceTex.height], [faceTex.width, faceTex.height], [faceTex.width, 0], [0, 0]];
       drawTri(faceTex, src, cap.pts, 0, 1, 2);
       drawTri(faceTex, src, cap.pts, 0, 2, 3);
       // light the printed face like every other facet, so it turns with the tile
