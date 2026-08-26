@@ -22,6 +22,8 @@
   if (!canvas || !canvas.getContext) return;
 
   var ctx = canvas.getContext('2d');
+  var textEl = section.querySelector('.tile-reveal-text');
+  var headerEl = document.querySelector('.site-header');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // ---------- proportions of a real tile ----------
@@ -29,6 +31,7 @@
   var MH = 1.375, MD = 0.76, MR = 0.11;
   var GREEN_DEPTH = 0.2;      // back fifth is the green backing plate
   var FOCAL = 1200;           // matches the perspective used elsewhere
+  var TZ_FAR = -1250, TZ_NEAR = 190;   // dolly: distant and small, then looming
 
   var BONE = [246, 236, 214];
   var GREEN = [31, 109, 82];
@@ -152,11 +155,16 @@
     return [v[0] / n, v[1] / n, v[2] / n];
   })();
 
-  var cw = 0, chh = 0, dpr = 1;
+  var cw = 0, chh = 0, dpr = 1, textTop = 0, headerH = 0;
 
   function resize() {
     var r = canvas.getBoundingClientRect();
     if (!r.width || !r.height) return false;
+    // where the words actually start, measured rather than assumed
+    textTop = textEl ? (textEl.getBoundingClientRect().top - r.top) : r.height;
+    // the sticky header sits over the top of the stage, so that band is not
+    // ours to draw in — without this the tile's top corners hide behind it
+    headerH = headerEl ? headerEl.getBoundingClientRect().height : 0;
     dpr = Math.min(window.devicePixelRatio || 1, 1.75);
     if (Math.abs(r.width - cw) < 0.5 && Math.abs(r.height - chh) < 0.5) return true;
     cw = r.width; chh = r.height;
@@ -181,16 +189,34 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cw, chh);
 
-    // scale the model so the tile's width matches the layout box
-    var unit = Math.min(cw / 1.9, chh / (MH * 1.45));
+    // Give the tile everything above the words: it lands filling that band
+    // almost edge to edge, oversized rather than politely inside a box.
+    var edge = chh * 0.022;
+    var top = headerH + edge;
+    var availH = Math.max(120, textTop - top - edge);
+    var centerY = top + availH / 2;
+
+    // Size it against the ring that actually sets the silhouette. That ring
+    // sits at the front of the flat core, a third of the depth nearer the
+    // camera than the model centre, so it magnifies more; solving against the
+    // centre instead overshoots the target by about a tenth and runs the tile
+    // into the words.
+    //   h = MH * u * FOCAL / (D - k * u),  D = FOCAL - TZ_NEAR,  k = MD/2 - MR
+    //   =>  u = h * D / (MH * FOCAL + h * k)
+    var D = FOCAL - TZ_NEAR, k = MD / 2 - MR;
+    var wantH = 0.99 * availH, wantW = 0.92 * cw;
+    var unit = Math.min(
+      wantH * D / (MH * FOCAL + wantH * k),
+      wantW * D / (FOCAL + wantW * k)
+    );
     var damp = 1 - p;
 
     var ry = (180 + p * 540) * Math.PI / 180;
     var rx = Math.cos(p * 720 * Math.PI / 180) * 17 * damp * Math.PI / 180;
     var rz = Math.sin(p * 900 * Math.PI / 180) * 15 * damp * Math.PI / 180;
     var tx = Math.sin(p * 540 * Math.PI / 180) * 0.05 * cw * damp;
-    var ty = -(1 - p) * 0.12 * chh; // y-up, so the tile starts low and rises
-    var tz = -980 + p * 1040;
+    var ty = -(1 - p) * 0.09 * chh; // y-up, so the tile starts low and rises
+    var tz = TZ_FAR + p * (TZ_NEAR - TZ_FAR);
 
     var cy = Math.cos(ry), sy = Math.sin(ry);
     var cx = Math.cos(rx), sx = Math.sin(rx);
@@ -209,7 +235,7 @@
 
     function project(v) {
       var s = FOCAL / (FOCAL - v[2]);
-      return [cw / 2 + v[0] * s, chh / 2 - v[1] * s, v[2]];
+      return [cw / 2 + v[0] * s, centerY - v[1] * s, v[2]];
     }
 
     function poly(quad, base) {
@@ -252,7 +278,7 @@
     var sc = FOCAL / (FOCAL - tz);
     ctx.save();
     ctx.globalAlpha = 0.3 * Math.max(0, Math.min(1, sc));
-    var shx = cw / 2 + tx * sc, shy = chh / 2 - (ty - MH * 0.58 * unit) * sc;
+    var shx = cw / 2 + tx * sc, shy = centerY - (ty - MH * 0.58 * unit) * sc;
     var sg = ctx.createRadialGradient(shx, shy, 0, shx, shy, unit * sc * 0.95);
     sg.addColorStop(0, 'rgba(62,48,18,.55)');
     sg.addColorStop(1, 'rgba(62,48,18,0)');
