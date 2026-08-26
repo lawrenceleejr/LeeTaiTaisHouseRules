@@ -9,8 +9,9 @@
   that stands in before the sim is ready, without JS, and under reduced
   motion; the script swaps it out by adding .is-live.
 */ -}}
-<div class="logo-anim" role="img"
-     aria-label="Mahjong tiles are pushed around the table, gather into a row, and slam over one by one to read 李太太 — Lee TaiTai's House Rules.">
+{{- /* Decorative: the wordmark it draws is carried by the page's h1, so
+       announcing it here too would just double up. */ -}}
+<div class="logo-anim" aria-hidden="true">
   <div class="la-fallback">
     <div class="la-fb-row">
       <span class="la-fb-tile la-fb-hero" lang="zh-Hant">李</span>

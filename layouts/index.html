@@ -1,13 +1,16 @@
 {{ define "main" }}
 <section class="hero">
   <div class="wrap hero-wrap">
+    {{/* The animation renders the wordmark, so the page title lives here as a
+         visually-hidden h1: the heading is what assistive tech announces, and
+         the animation itself is decorative once its text is carried here. */}}
     <div class="hero-stage">
+      <h1 class="sr-only">Lee TaiTai’s House Rules — {{ site.Params.subtitle }}</h1>
       {{ partial "logo-animation.html" . }}
     </div>
     <div class="hero-copy">
       <p class="hero-kicker"><span class="hero-kicker-zh" lang="zh-Hant">麻雀</span> · a field guide to the family table</p>
-      <h1 class="hero-title">Lee&nbsp;TaiTai’s <em>House&nbsp;Rules</em></h1>
-      <p class="hero-sub">{{ site.Params.subtitle }}</p>
+      <p class="hero-sub" aria-hidden="true">{{ site.Params.subtitle }}</p>
       <p class="hero-lede">
         Mahjong, explained the way it was always meant to be:
         by someone who loves you but will absolutely take your money.
