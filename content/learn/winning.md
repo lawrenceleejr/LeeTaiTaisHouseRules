@@ -1,20 +1,19 @@
 ---
 title: "Winning, and Declaring It"
-description: "Ting, sik wu, Zi-Mo: the states of grace. Plus the waits you'll live in, the false win that lives in infamy, and the famous hands that break the rules."
+description: "Calling, sik wu, Zi-Mo: the states of grace. Plus the waits you'll live in, the false win that lives in infamy, and the famous hands that break the rules."
 weight: 5
 ---
 
 Everything so far has been logistics. This chapter is the religion.
 
-## Ting: the state of waiting
+## Calling: the state of waiting
 
-When your hand is one tile away from complete, you are **ting**
-({{< zh "聽牌" "ting paai" "listening for the tile" >}}) — literally
-*listening*. It's a beautiful word for a beautiful agony: 13 tiles arranged,
-one hole in the picture, every draw and every discard at the table suddenly
-personal.
+When your hand is one tile away from complete, you are **calling**
+({{< zh "聽牌" "ting paai" "listening for the tile" >}} — literally
+*listening*). It's a beautiful agony: 13 tiles arranged, one hole in the
+picture, every draw and every discard at the table suddenly personal.
 
-Etiquette note: you don't announce ting here. You just… get quiet.
+Etiquette note: you don't announce that you're calling. You just… get quiet.
 Suspiciously quiet. Everyone notices. Nobody says anything. The tension is
 the entertainment.
 
@@ -29,11 +28,14 @@ The classics:
 
 {{< hand tiles="b1 b2 | b3*" caption="**Edge wait:** 1–2 waiting on exactly the 3. Also four tiles, also character-building." >}}
 
-{{< hand tiles="dg | dg*" caption="**Pair wait:** everything's done except your second eye. Three tiles left in the universe. Praying accepted, encouraged." >}}
+{{< hand tiles="dg | dg*" caption="**Pair wait** — in our family, *riding a bicycle*: everything's done except your second eye. Three tiles left in the universe. Praying accepted, encouraged." >}}
 
 Counting how many of your winning tiles are already visible in the discards
-and exposed melds is the whole skill of the mid-game. Four copies exist. If
-three are face-up on the table, your gorgeous wait is a museum exhibit.
+and exposed melds is the whole skill of the mid-game. Four copies of every
+tile exist, and past that it is arithmetic: how many of the ones you need are
+still unseen, how many shapes your hand could still become, and which of
+those two numbers you'd rather bet on. Good players are not luckier — they
+are quietly running the multiplicities while everyone else is chatting.
 
 ## The two ways to win
 
@@ -42,8 +44,7 @@ three are face-up on the table, your gorgeous wait is a museum exhibit.
 Someone throws your tile; you say {{< zh "食糊" "sik wu" >}} — or just "sik!"
 in the heat of it — lay your hand face-up, and the table audits it. The
 thrower is the **discarder** ({{< zh "出銃" "ceot cung" "firing the cannon" >}}),
-and pays a premium for their crime. Details in Chapter 6. It's nothing
-personal. It's completely personal.
+and pays a premium for their crime. Details in Chapter 6.
 
 ### Self-draw
 
@@ -58,21 +59,21 @@ elongated in proportion to the size of the hand: a small hand gets a crisp
 Rare finishes worth knowing, so that when they happen you can lose your mind
 appropriately:
 
-- **Robbing the Pong/Gong** ({{< zh "搶槓" "coeng gong" >}}): someone claims
-  or extends a set with the exact tile that completes your hand — you snatch
-  it and win with it, plus an extra point. Legal. Devastating. Discussed for
-  years.
-- **Winning on a Gong replacement:** you declare a kong, draw the
-  replacement from the tail, and *the replacement wins the hand*. Also worth
-  a point — the kong that paid out twice.
+- **Robbing the pong or kong** ({{< zh "搶槓" "coeng gong" >}}): someone
+  claims or extends a set with the exact tile that completes your hand — you
+  snatch it and win with it, plus an extra point. Legal. Devastating.
+  Discussed for years.
+- **Winning on a kong replacement:** you declare a kong, draw the
+  replacement, and *the replacement wins the hand*. Also worth a point — the
+  kong that paid out twice.
 - **Last-tile heroics** ({{< zh "海底撈月" "hoi dai laau jyut" "scooping the moon from the sea" >}}):
   winning on the final live tile before the dead wall. No extra points; the
   group chat grants it immortality instead.
 
 ## The audit
 
-When you declare, your hand goes face-up and the table checks it: four legs,
-two eyes, and — if the table declared a **point minimum** before dealing —
+When you declare, your hand goes face-up and the table checks it: four melds,
+a pair, and — if the table declared a **point minimum** before dealing —
 enough points to clear it. [Chapter 6]({{< relref "scoring" >}}) has the
 details. Only then does money move.
 
@@ -80,7 +81,7 @@ Declare a win you don't have and you've committed
 {{< zh "詐糊" "zaa wu" "false win" >}} — the deepest shame available at a
 mahjong table. The standard penalty is steep: you pay everyone as if
 they'd won. The *real* penalty is that it becomes your name. "Remember
-when Kevin zaa wu'd?" Kevin has a PhD now. It has not helped.
+when Larry zaa wu'd?" Larry has a PhD now. It has not helped.
 
 {{< houserule >}}
 Lee-family zaa wu tariff: you pay all three players the table maximum. We
@@ -89,11 +90,11 @@ find this keeps declarations conservative.
 
 ## The exceptions that prove the shape
 
-A few celebrity hands ignore the four-legs-two-eyes silhouette — all of them
-legal here, all of them worth interrupting dinner to describe:
+A few celebrity hands ignore the four-melds-and-a-pair silhouette — all of
+them legal here, all of them worth interrupting dinner to describe:
 
 **Seven pairs**, {{< zh "七對子" "chat deui zi" >}}: exactly what it sounds
-like — seven pairs, no legs at all, fully concealed by nature. Worth **4
+like — seven pairs, no melds at all, fully concealed by nature. Worth **4
 points** and a warm feeling of having gamed the system.
 
 {{< hand tiles="d2 d2 b5 b5 b9 b9 c1 c1 we we dg dg dr | dr*" size="sm" caption="Seven pairs, waiting on the second red dragon. Fourteen tiles of pure hoarding behavior, finally rewarded." >}}
@@ -107,7 +108,7 @@ it is irrational. Landing it is immortality.
 {{< hand tiles="d1 d9 b1 b9 c1 c9 we ws ww wn dr dg dw | dr*" size="sm" caption="Thirteen orphans, waiting to pair literally any of its own tiles. If you ever complete this, screenshot the table and send it to the group chat immediately." >}}
 
 **All eight flowers**: collect every flower and season and the hand simply
-**ends — automatic win, 6 points**, no legs, no eyes, no shame. The
+**ends — automatic win, 6 points**, no melds, no eyes, no shame. The
 scratch-off ticket of mahjong, and yes, it's legal here.
 
 {{< taitai >}}

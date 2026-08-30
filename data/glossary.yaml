@@ -10,9 +10,9 @@ sections:
         lit: "collide"
         def: "Claim **anyone's** discard to complete a triplet. Beats a seung. Sounds exactly like what it does."
       - han: 槓
-        rom: gong
+        rom: kong
         lit: "kong"
-        def: "Four of a kind — open, added, or concealed. Called out loud like a pong, and it comes with a bonus replacement draw from the tail of the wall."
+        def: "Four of a kind — open, added, or concealed. Called out loud like a pong, and it comes with a bonus replacement draw from the marked end of the wall."
       - han: 食糊
         rom: sik wu
         lit: "eat the win"
@@ -24,7 +24,7 @@ sections:
       - han: 太碰
         rom: tai-pong
         lit: "thinking about ponging"
-        def: "The formal announcement that you are *considering* a Pong. Claims nothing, commits nothing, terrifies everyone. A family invention and a diplomatic triumph."
+        def: "A request for grace — *hold on, let me think about this one.* Claims nothing; the table gives you the beat."
       - han: 補花
         rom: bou faa
         lit: "patch the flower"
@@ -32,16 +32,16 @@ sections:
   - title: "States of being"
     entries:
       - han: 聽牌
-        rom: ting paai
+        rom: ting paai · "calling"
         lit: "listening for the tile"
-        def: "One tile from winning. Symptoms include sudden quiet, careful breathing, and fooling absolutely no one."
+        def: "One tile from winning — at this table you say you are *calling*. Symptoms include sudden quiet, careful breathing, and fooling absolutely no one."
       - han: 門前清
         rom: mun cin cing
         lit: "clean in front of the door"
-        def: "A hand built with zero claims — fully concealed. The cash arrives via the silent fortress: four concealed Pongs plus a Zi-Mo, 6 points. The smugness arrives free."
+        def: "A hand built with zero claims — fully concealed. The cash arrives via the silent fortress: four concealed pongs plus a Zi-Mo, 6 points. The smugness arrives free."
       - han: 莊
         rom: zong
-        lit: "the banker"
+        lit: "the dealer's seat"
         def: "The dealer. Wins bigger, loses bigger, and at this table, keeps the deal by winning — 連莊 lin zong."
       - han: 上家 / 下家
         rom: seung gaa / haa gaa
@@ -68,7 +68,7 @@ sections:
       - han: 平糊
         rom: ping wu
         lit: "level win"
-        def: "All runs plus eyes. Worth 1 point and the quiet respect owed to anyone who ships something on time."
+        def: "All runs plus a pair. Worth 1 point and the quiet respect owed to anyone who ships something on time."
       - han: 對對糊
         rom: deui deui wu
         lit: "pair-pair win"
@@ -84,7 +84,7 @@ sections:
       - han: 大三元
         rom: daai saam yun
         lit: "big three dragons"
-        def: "Triplets of all three dragons. 6 points — the cap — and a story your table will tell at your wedding."
+        def: "Pongs of all three dragons. 6 points — the cap — and a story your table will tell at your wedding."
       - han: 十三幺
         rom: sap saam jiu
         lit: "thirteen orphans"
@@ -92,7 +92,7 @@ sections:
       - han: 七對子
         rom: chat deui zi
         lit: "seven pairs"
-        def: "A legal hand of seven pairs — no legs, all eyes. 4 points for fourteen tiles of pure hoarding behavior."
+        def: "A legal hand of seven pairs — no melds, all pairs. 4 points for fourteen tiles of pure hoarding behavior."
       - han: 九張
         rom: gau zoeng · "9-cards!"
         lit: "nine cards"
@@ -100,7 +100,7 @@ sections:
       - han: 出銃
         rom: ceot cung
         lit: "fire the cannon"
-        def: "Discarding the tile someone wins on. You pay double — and if '9-cards' was on record for a full flush, you pay everyone's shares. Nothing personal; entirely your fault."
+        def: "Discarding the tile someone wins on. You pay double — and if '9-cards' was on record for a full flush, you pay everyone's shares."
       - han: 詐糊
         rom: zaa wu
         lit: "fraudulent win"
