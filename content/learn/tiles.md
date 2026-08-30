@@ -1,6 +1,6 @@
 ---
 title: "Meet the Tiles"
-description: "All 144 of them: three suits, four winds, three dragons, eight bonus flowers, and exactly one bird."
+description: "All 144 of them: three suits, four winds, three dragons, and eight bonus flowers."
 weight: 2
 ---
 
@@ -41,7 +41,7 @@ sparrows.
 
 The literacy check. Each tile is a number written in Chinese over the
 character {{< zh "萬" "maan" >}}, meaning ten thousand — so the 5 of
-characters is literally "50,000." Aspirational.
+characters is literally "50,000."
 
 {{< hand tiles="c1 c2 c3 c4 c5 c6 c7 c8 c9" size="sm" caption="Characters, 1–9: 一 二 三 四 五 六 七 八 九. One through three are freebies. Four through nine build character. Pun intended." >}}
 
@@ -56,15 +56,15 @@ promise. Losing money is a phenomenal mnemonic.
 ## The honors (28 tiles)
 
 Honor tiles have **no numbers and form no runs**. They only work as triplets,
-kongs, or eyes. They are, in every sense, too important to be sequenced.
+kongs, or eyes.
 
 ### The four winds
 
 {{< hand tiles="we ws ww wn" caption="East 東, South 南, West 西, North 北 — four copies each. The little letter in the corner is training wheels; use it proudly." >}}
 
 Winds matter twice: each **seat** has a wind, and each **round** has a wind.
-Chapter 3 covers both. A triplet of your own seat's wind or the round's wind
-scores extra. A triplet of a random wind scores nothing and takes up real
+Chapter 3 covers both. A pong of your own seat's wind or the round's wind
+scores extra. A pong of a random wind scores nothing and takes up real
 estate — the decorative throw pillow of mahjong hands.
 
 ### The three dragons
@@ -77,28 +77,27 @@ estate — the decorative throw pillow of mahjong hands.
   {{< zh "發財" "faat coi" "get rich" >}}. The tile equivalent of a lucky red
   envelope.
 - The **white dragon** — a frame around nothing. Represents purity, or a
-  blank check, or the void. Depends which uncle you ask.
+  blank check, or the void.
 
-Any triplet of any dragon scores a bonus. Collect all three triplets and
+Any pong of any dragon scores a bonus. Collect all three and
 you've made one of the most feared hands in the game. People will tell this
 story about you.
 
 ## The flowers (8 tiles)
 
-{{< hand tiles="f1 f2 f3 f4 p1 p2 p3 p4" size="sm" caption="Four seasons 春夏秋冬 and four plants 梅蘭菊竹, one copy each. Pretty, useless for building, worth bonus points anyway. The influencers of the tile set." >}}
+{{< hand tiles="f1 f2 f3 f4 p1 p2 p3 p4" size="sm" caption="Four seasons 春夏秋冬 and four plants 梅蘭菊竹, one copy each. Pretty, useless for building, worth bonus points anyway." >}}
 
 Flowers don't go in your hand. When you draw one, you set it aside face-up,
 draw a replacement tile from the back of the wall, and collect bonus points
 at the end if you win: one for each flower whose number matches your seat,
 one for holding **all four of a set** — all seasons, or all plants; on our
 tiles you can tell the sets apart by the color of the little corner
-numbers — and one for having no flowers at all, because these rules have a
-sense of humor.
+numbers — and one for having no flowers at all.
 
 {{< houserule >}}
 We play **with** flowers, and with the lottery clause attached: collect
 **all eight flowers** and the hand ends on the spot. Automatic win, maximum
-points, no legs, no eyes, no notes. We did not come here to live a life
+points, no melds, no eyes, no notes. We did not come here to live a life
 without small unearned windfalls.
 {{< /houserule >}}
 

@@ -1,6 +1,6 @@
 ---
 title: "Setting the Table"
-description: "Seats, winds, the sacred wall-washing racket, and how 144 tiles become four hands without anyone getting accused of anything."
+description: "Seats, winds, the sacred wall-washing racket, and how 144 tiles become four hands."
 weight: 3
 ---
 
@@ -17,10 +17,15 @@ The four seats are the four winds: {{< zh "東" "dung" "east" >}},
 feel wrong for exactly one evening and then feel like the only sane way to
 arrange humans.
 
-To assign seats, shuffle one of each wind face-down; everyone draws. East is
-the first **dealer** ({{< zh "莊" "zong" >}}). East also effectively "owns"
-the first hand: the dealer wins and loses bigger, and here the dealer who
-wins **stays dealer** — cue groaning. Chapter 6 has the money side.
+To start, someone rolls the dice and sets the **round wind marker** in the
+centre of the table. Count that number around the table counterclockwise,
+beginning with the thrower as one. Whoever you land on takes the **east**
+seat, and east is the first **dealer** ({{< zh "莊" "zong" >}}). Everyone
+else falls into south, west and north from there.
+
+East effectively owns the first hand: the dealer wins and loses bigger, and
+here the dealer who wins **stays dealer** — cue groaning. Chapter 6 has the
+money side.
 
 Winds do double duty:
 
@@ -61,18 +66,27 @@ tiles, and I've seen a Thanksgiving end over less.
 Each player builds a wall in front of themselves: **18 stacks long, 2 tiles
 high**, face-down. Four walls, pushed together into a square — a little
 fortress with all the tiles inside, and yes, 4 × 36 = 144, it all accounts
-for itself. The walls exist so nobody knows which tiles are where, and so
-that dealing is auditable. Mahjong invented tamper-evident packaging centuries
-before the pharmaceutical industry.
+for itself.
+
+This is the part to show off on. Anyone can push tiles into a line; the craft
+is in the **top row** — lining up a full run of tiles and dropping the whole
+lot onto the bottom row in one motion. The longer the drop, the higher the
+cred. It is completely fine to be a baby about it and do it a chunk at a
+time. Everyone starts there.
 
 {{< hand tiles="_ _ _ _ _ _ _ _" size="sm" caption="A stretch of wall: face-down, two high — trust us on the second layer — and exactly as tempting to knock over as it looks. Don't." >}}
 
+Mark the **replacement end** while you're building: stack the last stack of
+the wall **three or four tiles high** instead of two. That's the visible flag
+for where kong replacements and flower patches get drawn from, so nobody has
+to ask mid-hand.
+
 ## The dice decide everything
 
-The dealer rolls **two dice** and counts that many players counterclockwise,
-starting with themselves, to pick whose wall gets broken. Then they count
-that same number of stacks in from that wall's right edge and lift the deal
-from there.
+The dealer rolls **three dice** — always three — and counts that total
+around the table counterclockwise, starting with themselves, to pick whose
+wall gets broken. Then they count that same number of stacks in from that
+wall's right edge and lift the deal from there.
 
 Is this over-engineered? Deeply. That's the anti-cheating genius of it: nobody
 — not even the dealer — can know in advance which part of which wall becomes
@@ -103,9 +117,9 @@ flowers, which can cascade gloriously — a good omen, or at least a good bit.
   — is intact and nobody's elbow is threatening it. Remember the tail
   matters twice: the **last 14 tiles of the wall are dead** and never get
   drawn; when the live wall runs dry, the hand is over.
-- Snacks are at a safe non-greasy distance.
+- Snacks and drinks are poured and within reach. We encourage both — just
+  get them before the hand starts, not in the middle of one.
 - Someone has already said "okay okay okay let's GO" at least twice.
 
-Now we play. Next chapter: what actually happens on a turn, and the three
-magic words that let you take other people's garbage and turn it into
-victory.
+Now we play. Next chapter: what actually happens on a turn, and the ways you
+can take tiles from the pot.

@@ -1,6 +1,6 @@
 ---
 title: "The Lee House Rules"
-description: "The constitution. Ratified by decades of Friday nights, enforceable by a look."
+description: "The constitution. Ratified by decades of Friday nights."
 weight: 7
 ---
 
@@ -49,21 +49,14 @@ footsie-based information transfer and no one has time to relitigate the
 see your love *and* your discards.
 {{< /houserule >}}
 
-{{< houserule title="Article 7 — All eight flowers is a win" >}}
-Collect all 8 flowers and the hand ends immediately: **automatic win at 6
-points, Spicy**. It requires no skill and confers total glory. This is the
-lottery clause and it's beautiful.
-{{< /houserule >}}
-
 ## Table law
 
 The articles above cover the game. These cover the room. Same force of
 law — arguably more.
 
-- **Tai-Pong is a protected utterance.** Saying
-  {{< zh "太碰" "tai-pong" >}} — *"I'm thinking about ponging"* — commits
-  you to nothing and warns everyone of everything. It is the table's most
-  honest sentence and its finest psychological weapon.
+- **Tai-Pong is a request for grace.** Saying
+  {{< zh "太碰" "tai-pong" >}} means *hold on, let me think about this one.*
+  It claims nothing. The table gives you the beat.
 - **Trash talk: encouraged. Coaching: forbidden.** One voice per hand. Your
   cousin's boyfriend does not need three advisors; he needs to lose
   authentically, like everyone before him.
@@ -71,19 +64,19 @@ law — arguably more.
   you don't have and you pay everyone the Spicy maximum. Check twice.
   Declare once.
 - **The wall is sacred.** Touch it out of turn and the whole table will make
-  the same sound at you. You'll know the sound when you hear it. You'll hear
-  it once.
+  the same sound at you. You'll know the sound when you hear it.
 - **First win is on the house.** A first-timer's first-ever win is
   celebrated, photographed, and paid double by the table. Nobody's buying
   beginner tears at this establishment. This is also how we recruit.
-- **Kibitzers eat quietly.** Watching is free; opinions cost. The chair
-  behind TaiTai is the best seat in cinema — act accordingly.
+- **The peanut gallery eats quietly.** Watching is free; opinions cost. The
+  chair behind TaiTai is the best lesson you can get — take it, and take it
+  silently.
 
 ## Frequently argued questions
 
 **Can we play with jokers?**
-No. This isn't canasta. We're delighted your office plays American
-mah-jongg; this table predates HR.
+No. We're delighted your office plays American mah-jongg — you can play
+American rules at someone else's house.
 
 **What do we play for?**
 Default: **a penny a chicken.** Before the first deal, the table can discuss

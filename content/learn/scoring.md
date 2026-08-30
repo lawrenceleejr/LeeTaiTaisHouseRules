@@ -21,29 +21,29 @@ That's it. Everything below is just the menu.
 
 | Feature | Notes |
 |---|---|
-| Hand of all Seungs ({{< zh "平糊" "ping wu" >}}) | four runs + eyes, the tofu of hands |
+| Hand of all Seungs ({{< zh "平糊" "ping wu" >}}) | four runs + a pair, the tofu of hands |
 | Zi-Mo ({{< zh "自摸" "zi mo" >}}) | self-drawn winning tile |
-| Round-wind Pong | the wind of the current round |
-| Your-wind Pong | your seat's wind |
-| Each dragon Pong | 中, 發, or white |
+| Round-wind pong | the wind of the current round |
+| Your-wind pong | your seat's wind |
+| Each dragon pong | 中, 發, or white |
 | Each of your own flowers | flower number matches your seat |
 | No flowers at all ({{< zh "無花" "mou faa" >}}) | ironically |
 | All four flowers of one set | all seasons, or all plants |
-| Win by robbed Pong/Gong ({{< zh "搶槓" "coeng gong" >}}) | stolen at the moment of glory |
-| Win on a Gong replacement tile | the kong pays out twice |
+| Win by robbed pong or kong ({{< zh "搶槓" "coeng gong" >}}) | stolen at the moment of glory |
+| Win on a kong replacement tile | the kong pays out twice |
 
 ### 3 points
 
 | Hand | |
 |---|---|
-| All Pongs + eyes ({{< zh "對對糊" "deui deui wu" >}}) | maximum clack |
+| All pongs + a pair ({{< zh "對對糊" "deui deui wu" >}}) | maximum clack |
 | All one suit + honors ({{< zh "混一色" "wan yat sik" >}}) | committed, tasteful |
 
 ### 4 points
 
 | Hand | |
 |---|---|
-| Two dragon Pongs + eyes of the third ({{< zh "小三元" "siu saam yun" >}}) | so close to legend |
+| Two dragon pongs + a pair of the third ({{< zh "小三元" "siu saam yun" >}}) | so close to legend |
 | **Seven pairs** ({{< zh "七對子" "chat deui zi" >}}) | see [Chapter 5]({{< relref "winning" >}}) — yes, we play it |
 
 ### 6 points — the ceiling
@@ -51,17 +51,17 @@ That's it. Everything below is just the menu.
 | Hand | |
 |---|---|
 | Full flush ({{< zh "清一色" "cing yat sik" >}}) | one suit, nothing else |
-| Four concealed Pongs + Zi-Mo | the silent fortress |
-| Three dragon Pongs/Gongs ({{< zh "大三元" "daai saam yun" >}}) | wedding-toast material |
-| Three wind Pongs/Gongs + eyes of the fourth | little four winds |
-| Four wind Pongs/Gongs | the weather report |
+| Four concealed pongs + Zi-Mo | the silent fortress |
+| Three dragon pongs or kongs ({{< zh "大三元" "daai saam yun" >}}) | wedding-toast material |
+| Three wind pongs or kongs + a pair of the fourth | little four winds |
+| Four wind pongs or kongs | the weather report |
 | Only honors ({{< zh "字一色" "zi yat sik" >}}) | winds and dragons only |
 | Only 1s and 9s | terminal behavior |
 | 1 + 9 of each suit + one of every honor ({{< zh "十三幺" "sap saam jiu" >}}) | thirteen orphans |
-| Four Gongs | statistically rude |
+| Four kongs | statistically rude |
 | **All 8 flowers** | automatic win, mid-hand, no assembly required |
 
-Points **stack**: an all-Pong, one-suit-plus-honors hand with a dragon Pong
+Points **stack**: an all-pong, one-suit-plus-honors hand with a dragon pong
 and a Zi-Mo finish is 3 + 3 + 1 + 1 = 8… which the cap immediately flattens
 to 6. Count it out loud anyway. It's customary and it's cardio.
 
@@ -122,32 +122,24 @@ It's a formalized version of the oldest mahjong ethic there is: you were
 warned. The table said it out loud. The suit was right there.
 
 {{< taitai >}}
-"9-cards" is not an insult, it's a service announcement — like "wet floor,"
-if the floor could take your money. When you hear it, hold your dots like
-your dignity: firmly, and until the hand is over.
+"9-cards" is not an insult, it's a service announcement. When you hear it,
+hold your tiles. Play tighter than your granddad for the rest of the hand:
+sit on anything in that suit, throw the safe thing, and take the smaller win
+if it's going. Nobody has ever regretted being boring after a 9-cards call.
 {{< /taitai >}}
 
 ## The dealer
 
 The dealer, {{< zh "莊" "zong" >}}, who wins **keeps the deal** —
 {{< zh "連莊" "lin zong" "consecutive dealership" >}} — and the other three
-players begin openly conspiring like it's a period drama. This is correct,
-traditional, and the closest thing the game has to a boss fight.
+players begin openly conspiring like it's a period drama.
 
 ## When nobody wins
 
 The **last 14 tiles of the wall are dead** — nobody draws them. If the live
 wall runs out with no winner, the hand is a wash,
 {{< zh "流局" "lau guk" >}}: no payments, same dealer re-deals, and
-everyone agrees the *next* hand is "the real one." All 17 previous hands
-were also the real one. Nobody examines this.
-
-{{< taitai >}}
-Learn the payout table cold and volunteer to be banker. Not because anyone
-cheats — because arithmetic disputes are the only fights at this table that
-are actually boring. Also, bankers are never asked to refill the snacks.
-Everything I do has two reasons.
-{{< /taitai >}}
+everyone agrees the *next* hand is "the real one."
 
 One chapter left: the constitution itself — the full house rules, plus the
 table law that isn't about tiles at all.
