@@ -781,6 +781,11 @@ h4 {
   max-width: 22ch;
 }
 
+/* no lede under it — don't leave the gap that one would have filled */
+.doc-hero h1:last-child {
+  margin-bottom: 0;
+}
+
 .doc-lede {
   font-size: var(--fs-md);
   color: var(--muted);
