@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{/* A log, not an article: the entries live in data/moments.yaml so adding one
+     is a three-line append rather than a layout problem. */}}
+<article class="doc">
+  <header class="doc-hero">
+    <div class="wrap doc-hero-wrap">
+      <p class="doc-kicker">{{ .Params.kicker | default "The record" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{- with .Description }}<p class="doc-lede">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="doc-content prose section-intro">
+      {{ .Content }}
+    </div>
+    {{- with site.Data.moments.entries }}
+    <ol class="moments">
+      {{- range . }}
+      <li class="moment">
+        <p class="moment-when">
+          <span class="moment-date">{{ .date }}</span>
+          {{- with .place }}<span class="moment-place">{{ . }}</span>{{ end }}
+        </p>
+        <p class="moment-what">{{ .what | markdownify }}</p>
+      </li>
+      {{- end }}
+    </ol>
+    {{- end }}
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,10 @@
+# The Lee table's hall of fame. Newest first — new entries go on top.
+# Each one wants a date, a place, and a few words. If it takes a paragraph,
+# you had to be there. `what` is markdown, so **bold** works.
+entries:
+  - date: "17 September 2026"
+    place: "Fermilab"
+    what: "Tova kongs, draws a flower on the replacement, then **自摸** off the flower's replacement."
+  - date: "September 2026"
+    place: "Fermilab"
+    what: "Every single player had an open kong. Martin had **two**."
