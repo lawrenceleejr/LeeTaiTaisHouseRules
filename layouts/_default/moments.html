@@ -10,9 +10,11 @@
     </div>
   </header>
   <div class="wrap">
+    {{- with .Content }}
     <div class="doc-content prose section-intro">
-      {{ .Content }}
+      {{ . }}
     </div>
+    {{- end }}
     {{- with site.Data.moments.entries }}
     <ol class="moments">
       {{- range . }}
