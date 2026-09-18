@@ -22,6 +22,10 @@ disableKinds = ['taxonomy', 'term']
     name = 'Cheat Sheet'
     pageRef = '/cheat-sheet'
     weight = 30
+  [[menus.main]]
+    name = 'Moments'
+    pageRef = '/moments'
+    weight = 40
 
 [markup]
   [markup.goldmark.renderer]
