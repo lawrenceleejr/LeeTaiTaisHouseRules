@@ -1254,6 +1254,120 @@ h4 {
   color: color-mix(in srgb, var(--ink) 85%, var(--muted));
 }
 
+/* ---------- printable pamphlet ---------- */
+.printable {
+  background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--green) 30%, transparent);
+  border-radius: 16px;
+  padding: 1.5rem 1.6rem 1.6rem;
+  margin: 0 0 2.5em;
+}
+
+.printable-kicker {
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin: 0 0 0.3rem;
+}
+
+.printable-zh {
+  font-family: var(--font-zh);
+  letter-spacing: 0.06em;
+}
+
+/* wins over .prose h2, which would otherwise push it off the card's top edge */
+.printable .printable-head {
+  font-size: var(--fs-lg);
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+}
+
+.printable-lede {
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+  max-width: 46ch;
+}
+
+.printable-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 0 0 1.2rem;
+}
+
+.printable-meta {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.prose .printable-specs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--ink) 85%, var(--muted));
+}
+
+.prose .printable-specs li {
+  margin: 0;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.prose .printable-specs li::before {
+  content: '\25c6';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.printable-pages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.printable-page {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.printable-page img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  transition: transform 0.18s ease;
+}
+
+.printable-page:hover img {
+  transform: translateY(-3px);
+}
+
+.printable-page-label {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .printable-pages {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- notable moments ---------- */
 .moments {
   list-style: none;
