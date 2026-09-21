@@ -5,6 +5,8 @@ kicker: "Reference · 貓紙"
 hideToc: true
 ---
 
+{{< printable >}}
+
 ## The win condition
 
 **4 melds + 1 pair = 14 tiles.** A meld is a run (3 in a row, one suit) or a

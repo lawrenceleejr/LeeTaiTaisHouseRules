@@ -1,0 +1,41 @@
+{{- /* {{< printable >}} — the download card for the printed pamphlet.
+       The PDF lives in static/ so it keeps a clean, linkable filename; the
+       page previews come from assets/ so Hugo can size and re-encode them. */ -}}
+{{- $pdf := "/lee-taitais-house-rules-cheat-sheet.pdf" -}}
+{{- $stat := os.Stat (path.Join "static" $pdf) -}}
+{{- $mb := div (math.Round (div (float $stat.Size) 104857.6)) 10.0 -}}
+<aside class="printable">
+  <div class="printable-copy">
+    <p class="printable-kicker">Printable <span class="printable-zh" lang="zh-Hant">貓紙</span></p>
+    <h2 class="printable-head">Take it to the table</h2>
+    <p class="printable-lede">
+      The same game, folded into a pamphlet you can hand to the person who
+      keeps asking what a flower is.
+    </p>
+    <p class="printable-cta">
+      <a class="btn btn-primary" href="{{ $pdf | relURL }}" download>Download the PDF</a>
+      <span class="printable-meta">2 pages · US&nbsp;Letter landscape · {{ $mb }}&nbsp;MB</span>
+    </p>
+    <ul class="printable-specs">
+      <li>Print <strong>double-sided</strong> and fold in thirds — the green panel is the cover. If the back comes out upside down, flip the duplex setting.</li>
+      <li>Short on time? <strong>Page&nbsp;2 on its own</strong> is the winning shape, every tile, and the whole point table on one sheet.</li>
+    </ul>
+  </div>
+  <div class="printable-pages">
+    {{- range $i, $name := (slice "cheat-sheet-p1.png" "cheat-sheet-p2.png") }}
+    {{- with resources.Get (printf "img/%s" $name) }}
+    {{- $big := .Resize "1400x webp q82" }}
+    {{- $small := .Resize "700x webp q82" }}
+    <a class="printable-page" href="{{ $pdf | relURL }}">
+      <img src="{{ $small.RelPermalink }}"
+           srcset="{{ $small.RelPermalink }} 700w, {{ $big.RelPermalink }} 1400w"
+           sizes="(max-width: 30rem) 80vw, 21rem"
+           width="{{ $small.Width }}" height="{{ $small.Height }}"
+           alt="{{ if eq $i 0 }}Outside of the pamphlet: the 6-point hands, the payout table, the game and table rules, a glossary, and the cover.{{ else }}Inside of the pamphlet: the shape of a winning hand, every tile in the set, and the full point system.{{ end }}"
+           loading="lazy" decoding="async">
+      <span class="printable-page-label">Page {{ add $i 1 }}</span>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+</aside>
