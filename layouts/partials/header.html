@@ -7,7 +7,10 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       {{- $current := . }}
       {{- range site.Menus.main }}
-      <a href="{{ .URL }}" {{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (and (eq .PageRef "/learn") (eq $current.Section "learn")) }}class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- /* an entry configured with a url rather than a pageRef leaves the
+             site, so it opens in its own tab and says so to screen readers */}}
+      {{- $offsite := strings.HasPrefix .URL "http" }}
+      <a href="{{ .URL }}"{{ if $offsite }} target="_blank" rel="noopener"{{ end }} {{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (and (eq .PageRef "/learn") (eq $current.Section "learn")) }}class="active" aria-current="page"{{ end }}>{{ .Name }}{{ if $offsite }}<span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
       {{- end }}
     </nav>
     <div class="header-actions">

@@ -26,6 +26,10 @@ disableKinds = ['taxonomy', 'term']
     name = 'Moments'
     pageRef = '/moments'
     weight = 40
+  [[menus.main]]
+    name = 'Stickers'
+    url = 'https://www.redbubble.com/people/Lawrenceleejr/shop?ref=account-nav-dropdown&collections=4584368'
+    weight = 50
 
 [markup]
   [markup.goldmark.renderer]
