@@ -1,8 +1,11 @@
 {{- /* {{< printable >}} — the download card for the printed pamphlet.
-       The PDF lives in static/ so it keeps a clean, linkable filename; the
-       page previews come from assets/ so Hugo can size and re-encode them. */ -}}
-{{- $pdf := "/lee-taitais-house-rules-cheat-sheet.pdf" -}}
-{{- $stat := os.Stat (path.Join "static" $pdf) -}}
+       The PDF is an asset rather than a static file so its URL comes from
+       .RelPermalink: the site is served from a subpath, and relURL does not
+       prepend it. Hugo publishes the asset under its own name, so the
+       download keeps a clean, linkable filename. */ -}}
+{{- $file := "lee-taitais-house-rules-cheat-sheet.pdf" -}}
+{{- $pdf := (resources.Get $file).RelPermalink -}}
+{{- $stat := os.Stat (path.Join "assets" $file) -}}
 {{- $mb := div (math.Round (div (float $stat.Size) 104857.6)) 10.0 -}}
 <aside class="printable">
   <div class="printable-copy">
@@ -13,7 +16,7 @@
       keeps asking what a flower is.
     </p>
     <p class="printable-cta">
-      <a class="btn btn-primary" href="{{ $pdf | relURL }}" download>Download the PDF</a>
+      <a class="btn btn-primary" href="{{ $pdf }}" download>Download the PDF</a>
       <span class="printable-meta">2 pages · US&nbsp;Letter landscape · {{ $mb }}&nbsp;MB</span>
     </p>
     <ul class="printable-specs">
@@ -26,7 +29,7 @@
     {{- with resources.Get (printf "img/%s" $name) }}
     {{- $big := .Resize "1400x webp q82" }}
     {{- $small := .Resize "700x webp q82" }}
-    <a class="printable-page" href="{{ $pdf | relURL }}">
+    <a class="printable-page" href="{{ $pdf }}">
       <img src="{{ $small.RelPermalink }}"
            srcset="{{ $small.RelPermalink }} 700w, {{ $big.RelPermalink }} 1400w"
            sizes="(max-width: 30rem) 80vw, 21rem"
